@@ -1,7 +1,7 @@
 #canvas{
     position: absolute;
-    background-color: #253237;
-    z-index:-1;
+    background-color: #0b132b;
+    z-index:0;
 }
 
 
@@ -48,8 +48,20 @@
     padding-right:20px; 
   }
   .about_container{
-     height: 100vh;
-     background-color: darkcyan;
+     height: 130vh;
+     background-color: #5bc0be;
+     display:flex;
+
+  }
+  .profile{
+    padding-top: 4em;
+
+  }
+  .profile_img{
+    width:300px;
+    height:300px;
+    border-radius: 50%;
+    padding: 4em;
   }
 
   a{

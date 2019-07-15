@@ -1,7 +1,7 @@
 var canvas;
 var ctx;
 var particles = [];
-var num_particles = 250;
+var num_particles = 200;
 var mouse = {
     x: undefined,
     y: undefined
@@ -76,8 +76,8 @@ var Particle = function () {
         this.vy = Math.random()*-2;
     }
 
-    this.Color = "#5C6B73";
-    this.radius = 3;
+    this.Color = "#3a506b";
+    this.radius = 2.5;
 
     this.draw = function () {
         ctx.beginPath();
