@@ -1,29 +1,38 @@
 var canvas;
 var ctx;
 var particles = [];
-var num_particles = 200;
+var num_particles = 250;
 var mouse = {
     x: undefined,
     y: undefined
 }
+var canvasW = $('body').width();
+var canvasH = $('#intro_section').height();
 
 window.onload = function() {
     init();
 };
 
 window.addEventListener('mousemove', mousePosition);
+window.addEventListener('mouseout', mouseOut);
+//window.addEventListener('scroll', mouseOut);
+window.addEventListener('mouseenter', mousePosition);
 window.addEventListener('resize', resizeCanvas);
 
 
-$("canvas").mouseleave(function () { // if mouse leave the window, then reset the position
-    mousePosition('mousemove');
-});
 /*
 * Get mouse position
 */
 function mousePosition(event) {
-    mouse.x = event.clientX;
-    mouse.y = event.clientY;
+    mouse.x = event.pageX;
+    mouse.y = event.pageY;
+}
+/*
+* Cancel mouse postion
+*/
+function mouseOut(event){
+    mouse.x =0;;
+    mouse.y=0;
 }
 
 /*
@@ -32,8 +41,8 @@ function mousePosition(event) {
 function init(){
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = canvasW;
+    canvas.height = canvasH;
     start();
 };
 
