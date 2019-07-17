@@ -24,50 +24,77 @@
   }
 
   #intro_text h1{
-    font-size: 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 7em;
   }
   #intro_text h2{
+    margin-top:0; 
     text-transform: capitalize;
   }
   .icon{
    padding-left: 0px; 
   }
-
+  /* menu */
   .nav_container{
       display: flex;
       width: 100%;
       overflow: hidden;
       position: absolute;
-      bottom: 0px;
-      justify-content: flex-end;
-    
-  }
+      bottom: 0;
+      justify-content: flex-end;  
+      z-index :0;
+    }
 
   .nav_container a{
     margin: 20 20 0 20;
     padding-right:20px; 
   }
+
+  #second_menu{
+    display: flex;
+    width: 100%;
+    position: fixed;
+    justify-content: flex-end;  
+    z-index: 0;
+  }
+  #second_menu p{
+    margin: 20 20 0 20;
+    padding-right:20px; 
+  }
   .about_container{
-     height: 130vh;
+     height: 140vh;
      background-color: #5bc0be;
      display:flex;
+  }
+  #aboutme{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    padding-top:4em;
 
   }
-
+  .profile{
+    padding-top:5em;
+    position: absolute;
+  }
   #profile_img{
-    width:300px;
-    height:300px;
+    width:250px;
+    height:250px;
     border-radius: 50%;
     padding: 4em;
     opacity:0;
+    position:absolute;
   }
   #profile_img.horizTranslate {
-    -webkit-transition: 3s;
-    -moz-transition: 3s;
-    -ms-transition: 3s;
-    -o-transition: 3s;
-    transition: 3s;
-    margin-left: 10% !important;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+    opacity:1;
+    margin-left: 15% !important;
   }
 
   a{
@@ -76,22 +103,20 @@
 
   p{
     color: #C2DFE3;
-    font-family:"Lucida Console", Monaco, monospace;
   }
 
   h1{
-    color: #E0FBFC;
-    font-family:"Lucida Console", Monaco, monospace;
+    color: #E0FBFC;   
   }
 
   h2{
-    color: #E0FBFC;
-    font-family:"Lucida Console", Monaco, monospace;
+    color: #E0FBFC;  
   }
   html, body {
     width:  100%;
     height: 100%;
     margin: 0;
+    scroll-behavior: smooth;
   }
   .icon{
     margin:30px;
@@ -112,4 +137,8 @@
     -webkit-transform:rotate(180deg);
     -moz-transform:rotate(180deg); 
     -o-transform:rotate(180deg);
+  }
+
+  * {
+    font-family: 'Changa', sans-serif;
   }

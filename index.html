@@ -1,7 +1,13 @@
 <html>
     <link rel="stylesheet" href="./asset/css/main.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <head></head>
+    <link href="https://fonts.googleapis.com/css?family=Changa|Roboto&display=swap" rel="stylesheet">
+    <head>
+        <div id = "second_menu">
+            <a href="#aboutme"><p>About</p></a>
+            <a href="#aboutme"><p>Work</p></a>
+            <a href="#aboutme"><p>Contact</p></a>  
+        </div>
+    </head>
     <body>
         <section id = "intro_section">
             <div class ="canvas"><canvas id ="canvas"></canvas></div>  
@@ -25,13 +31,15 @@
             </div>
         </section>
         <section class = about>
-        <div class = "about_container">
+        <div class = "about_container"> 
+            <div id =aboutme><h1>- About me -</h1></div>
             <div class ="profile">
-            <img id ="profile_img" src="./asset/img/puppy.jpg" alt="">
+            <img id ="profile_img" src="./asset/img/puppy.jpg" alt=""> 
             </div>
         </div>
         </section>
     </body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="asset/js/content.js"></script>
     <script src="./asset/js/myparticle.js"></script>
 </html>
