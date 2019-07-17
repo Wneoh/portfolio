@@ -8,6 +8,7 @@ var mouse = {
 }
 var canvasW = $('body').width();
 var canvasH = $('#intro_section').height();
+var onCanvas = true;
 
 window.onload = function() {
     init();
@@ -16,7 +17,7 @@ window.onload = function() {
 window.addEventListener('mousemove', mousePosition);
 window.addEventListener('mouseout', mouseOut);
 //window.addEventListener('scroll', mouseOut);
-window.addEventListener('mouseenter', mousePosition);
+//window.addEventListener('mouseenter', mousePosition);
 window.addEventListener('resize', resizeCanvas);
 
 
@@ -24,15 +25,15 @@ window.addEventListener('resize', resizeCanvas);
 * Get mouse position
 */
 function mousePosition(event) {
+    onCanvas =true;
     mouse.x = event.pageX;
     mouse.y = event.pageY;
 }
 /*
 * Cancel mouse postion
 */
-function mouseOut(event){
-    mouse.x =0;;
-    mouse.y=0;
+function mouseOut(){
+    onCanvas =false;
 }
 
 /*
@@ -41,6 +42,7 @@ function mouseOut(event){
 function init(){
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
+    //canvas.addEventListener('mousemove', mousePosition); // doesn't work
     canvas.width = canvasW;
     canvas.height = canvasH;
     start();
@@ -123,11 +125,11 @@ function loop() {
         particles[i].draw();
         particles[i].update();
 
-        if(particles[i].distanceBetween(mouse)<200){
+        if(particles[i].distanceBetween(mouse)<150 && onCanvas){
             connect(particles[i],mouse,particles[i].distanceBetween(mouse),mouse);
         }
         for (var j = 0; j < num_particles; j++) {
-            if(particles[i].distanceBetween(particles[j])<120){
+            if(particles[i].distanceBetween(particles[j])<105){
                 connect(particles[i],particles[j],particles[i].distanceBetween(particles[j]));
             }
         }
