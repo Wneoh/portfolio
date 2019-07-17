@@ -15,11 +15,11 @@ $(document).ready(function(){
         init();
     };
 
-    window.addEventListener('mousemove', mousePosition);
+    //window.addEventListener('mousemove', mousePosition);
     //canvas.addEventListener('mouseout', mouseOut);
-    window.addEventListener('scroll', mouseOut);
+    //window.addEventListener('scroll', mouseOut);
     //window.addEventListener('mouseenter', mousePosition);
-    window.addEventListener('resize', resizeCanvas);
+    //window.addEventListener('resize', resizeCanvas);
 
 
     /*
@@ -44,9 +44,11 @@ $(document).ready(function(){
         canvas = document.getElementById("canvas");
         ctx = canvas.getContext("2d");
         //canvas.addEventListener('mousemove', mousePosition); // doesn't work
-        canvas.addEventListener('mouseout', mouseOut);
         canvas.width = canvasW;
         canvas.height = canvasH;
+        canvas.addEventListener('mousemove', mousePosition);
+        canvas.addEventListener('mouseout', mouseOut);
+        canvas.addEventListener('resize', resizeCanvas);
         start();
     };
 
@@ -130,7 +132,7 @@ $(document).ready(function(){
             if(particles[i].distanceBetween(mouse)<150 && onCanvas){
                 connect(particles[i],mouse,particles[i].distanceBetween(mouse),mouse);
             }
-            for (var j = 0; j < num_particles; j++) {
+            for (var j = i+1; j < num_particles; j++) {
                 if(particles[i].distanceBetween(particles[j])<105){
                     connect(particles[i],particles[j],particles[i].distanceBetween(particles[j]));
                 }

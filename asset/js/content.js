@@ -23,7 +23,6 @@ $(document).ready(
       var img =document.getElementById("profile_img");
       var menu = document.getElementById("second_menu");
         if(scroll_pos>300 && once){
-            //fadein(img);
             img.classList.add('horizTranslate');
             once= false;
         }
@@ -47,4 +46,32 @@ $(document).ready(
           op += op * 0.3;
       }, 100);
   }
+  function fadeout(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0){
+            element.innerHTML ="Developer Of Anything";
+            fadein(element);
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -=.5 ;
+        console.log(op);
+    }, 100);
+}
+
+
+  // changing word
+  //var dev = document.getElementById('dev');
+  //dev.onmouseover = function(){
+    //fadeout(dev);
+    //fadein(dev);
+  //}
+  //dev.onmouseout = function(){
+  //  dev.innerHTML = "Full Stack Developer";
+  //  fadeout(dev);
+  //}
+
+
 });

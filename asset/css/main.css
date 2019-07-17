@@ -1,9 +1,8 @@
 #canvas{
     position: absolute;
     background-color: #0b132b;
-    z-index:0;
+    z-index: 1;
 }
-
 
   /* Intro Section */
 
@@ -16,6 +15,8 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
   }
 
   #intro_text{
@@ -28,27 +29,81 @@
     margin-bottom: 0px;
     font-size: 7em;
   }
-  #intro_text h2{
+  #dev{
+    border-style :solid;
     margin-top:0; 
-    text-transform: capitalize;
+    text-transform: capitalize; 
+    display: flex;
+    justify-content: center;
   }
+
+  #dev span{
+  animation: topToBottom 12.5s linear infinite 0s;
+	-ms-animation: topToBottom 12.5s linear infinite 0s;
+  -webkit-animation: topToBottom 12.5s linear infinite 0s;
+	opacity: 0;
+  overflow: hidden;
+  display: inline;
+    
+  }
+@keyframes animate
+{
+
+  0%{
+    opacity:0;
+    transition:translateY(-50px);
+  }
+  2%{
+    opacity:1;
+    transition:translateY(0px);
+  }
+  18%{
+    opacity:1;
+    transition:translateY(0px);
+  }
+  20%{
+    opacity:0;
+    transition:translateY(50px);
+  }
+  100%{
+    opacity:0;
+    transition:translateY(50px);
+  }
+}
+
+
+#dev span:nth-child(1){
+  position:absolute;
+}
+#dev span:nth-child(2){
+  animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+  -webkit-animation-delay: 2.5s;
+  position:absolute;
+}
+
   .icon{
-   padding-left: 0px; 
+    pointer-events:auto;
+    padding-left: 0px; 
   }
+
   /* menu */
   .nav_container{
       display: flex;
-      width: 100%;
+      width: auto;
       overflow: hidden;
       position: absolute;
       bottom: 0;
       justify-content: flex-end;  
-      z-index :0;
+      z-index :1;
+      right:0;
+      pointer-events:auto;
     }
 
   .nav_container a{
     margin: 20 20 0 20;
     padding-right:20px; 
+    pointer-events:auto;
   }
 
   #second_menu{
@@ -56,11 +111,13 @@
     width: 100%;
     position: fixed;
     justify-content: flex-end;  
-    z-index: 0;
+    z-index :1;
+    pointer-events:none;
   }
-  #second_menu p{
+  #second_menu a{
     margin: 20 20 0 20;
-    padding-right:20px; 
+    padding-right:20px;
+    pointer-events:auto; 
   }
   .about_container{
      height: 140vh;
@@ -99,6 +156,7 @@
 
   a{
     text-decoration: none;
+    pointer-events: stroke;
   }
 
   p{
