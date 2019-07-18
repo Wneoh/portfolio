@@ -23,7 +23,7 @@ $(document).ready(
       var img =document.getElementById("profile_img");
       var menu = document.getElementById("second_menu");
         if(scroll_pos>300 && once){
-            img.classList.add('horizTranslate');
+            //img.classList.add('horizTranslate');
             once= false;
         }
         if(scroll_pos>800 && second){

@@ -145,9 +145,10 @@ $(document).ready(function(){
     * resize canvas
     */
     function resizeCanvas()
-    {  
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+    {   canvasW = $('#intro_section').width();
+        canvasH = $('#intro_section').height();
+        canvas.width = canvasW;
+        canvas.height = canvasH;
         for(var i = 0;i<num_particles;i++){
             particles[i].draw();
         }
