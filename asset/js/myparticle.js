@@ -7,7 +7,7 @@ $(document).ready(function(){
         x: undefined,
         y: undefined
     }
-    var canvasW = $('body').width();
+    var canvasW = $('#intro_section').width();
     var canvasH = $('#intro_section').height();
     var onCanvas = true;
 
@@ -19,7 +19,7 @@ $(document).ready(function(){
     //canvas.addEventListener('mouseout', mouseOut);
     //window.addEventListener('scroll', mouseOut);
     //window.addEventListener('mouseenter', mousePosition);
-    //window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
 
 
     /*
@@ -48,7 +48,7 @@ $(document).ready(function(){
         canvas.height = canvasH;
         canvas.addEventListener('mousemove', mousePosition);
         canvas.addEventListener('mouseout', mouseOut);
-        canvas.addEventListener('resize', resizeCanvas);
+        //canvas.addEventListener('resize', resizeCanvas);
         start();
     };
 

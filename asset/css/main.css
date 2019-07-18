@@ -38,48 +38,50 @@
   }
 
   #dev span{
-  animation: topToBottom 12.5s linear infinite 0s;
-	-ms-animation: topToBottom 12.5s linear infinite 0s;
-  -webkit-animation: topToBottom 12.5s linear infinite 0s;
+  animation: vertical 8s linear infinite 0s;	
+  -ms-animation: vertical 8s linear infinite 0s;
+	-webkit-animation: vertical 8s linear infinite 0s;
 	opacity: 0;
   overflow: hidden;
   display: inline;
     
   }
-@keyframes animate
-{
-
-  0%{
-    opacity:0;
-    transition:translateY(-50px);
+  @-moz-keyframes vertical{
+    0% { opacity: 0; -moz-transform: translateY(-50px); }
+    2% { opacity: 1; -moz-transform: translateY(0px); }
+    18% { opacity: 1; -moz-transform: translateY(0px); }
+    40% { opacity: 1; -moz-transform: translateY(0px); }
+    50% { opacity: 0; -moz-transform: translateY(50px); }
+    60% { opacity: 0; -moz-transform: translateY(50px); }
+    100% { opacity: 0; -moz-transform: translateY(50px);}
   }
-  2%{
-    opacity:1;
-    transition:translateY(0px);
+  @-webkit-keyframes vertical{
+    0% { opacity: 0; -webkit-transform: translateY(-50px); }
+    2% { opacity: 1; -webkit-transform: translateY(0px); }
+    18% { opacity: 1; -webkit-transform: translateY(0px); }
+    40% { opacity: 1; -webkit-transform: translateY(0px); }
+    50% { opacity: 0; -webkit-transform: translateY(50px); }
+    60% { opacity: 0; -webkit-transform: translateY(50px); }
+    100% { opacity: 0; -webkit-transform: translateY(50px);}
   }
-  18%{
-    opacity:1;
-    transition:translateY(0px);
+  @-ms-keyframes vertical{
+    0% { opacity: 0; -ms-transform: translateY(-50px); }
+    2% { opacity: 1; -ms-transform: translateY(0px); }
+    18% { opacity: 1; -ms-transform: translateY(0px); }
+    40% { opacity: 1; -ms-transform: translateY(0px); }
+    50% { opacity: 0; -ms-transform: translateY(50px); }
+    60% { opacity: 0; -ms-transform: translateY(50px); }
+    100% { opacity: 0; -ms-transform: translateY(50px);}
   }
-  20%{
-    opacity:0;
-    transition:translateY(50px);
-  }
-  100%{
-    opacity:0;
-    transition:translateY(50px);
-  }
-}
-
+  
 
 #dev span:nth-child(1){
   position:absolute;
 }
 #dev span:nth-child(2){
-  animation-delay: 2.5s;
-	-ms-animation-delay: 2.5s;
-  -webkit-animation-delay: 2.5s;
-  position:absolute;
+  animation-delay: 4s;
+	-ms-animation-delay: 4s;
+  -webkit-animation-delay:4s;
 }
 
   .icon{
@@ -135,6 +137,8 @@
   .profile{
     padding-top:5em;
     position: absolute;
+    padding-top: 8em;
+    padding-left: 7em;
   }
   #profile_img{
     width:250px;
