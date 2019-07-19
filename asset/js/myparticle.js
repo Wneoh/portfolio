@@ -71,15 +71,15 @@ $(document).ready(function(){
         this.y = canvas.height * Math.random();
     
         if(Math.random() >= 0.5){
-            this.vx = Math.random()*2;
+            this.vx = Math.random()*1.2;
         }else{
-            this.vx = Math.random()*-2;
+            this.vx = Math.random()*-1.2;
         }
     
         if(Math.random() >= 0.5){
-            this.vy = Math.random()*2;
+            this.vy = Math.random()*1.2;
         }else{
-            this.vy = Math.random()*-2;
+            this.vy = Math.random()*-1.2;
         }
 
         this.Color = "#3a506b";
@@ -129,7 +129,7 @@ $(document).ready(function(){
             particles[i].draw();
             particles[i].update();
 
-            if(particles[i].distanceBetween(mouse)<150 && onCanvas){
+            if(particles[i].distanceBetween(mouse)<140 && onCanvas){
                 connect(particles[i],mouse,particles[i].distanceBetween(mouse),mouse);
             }
             for (var j = i+1; j < num_particles; j++) {
