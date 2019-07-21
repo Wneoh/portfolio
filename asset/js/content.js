@@ -2,7 +2,6 @@
 let last_known_scroll_position = 0;
 let ticking = false;
 let once =true;
-let second =true;
 
 $(document).ready(
   function(){
@@ -14,7 +13,7 @@ $(document).ready(
         doSomething(last_known_scroll_position);
         ticking = false;
       });
-
+      window.cancelAnimationFrame(timer);
       ticking = true;
     }
   });
@@ -22,17 +21,39 @@ $(document).ready(
   function doSomething(scroll_pos) {
       var img =document.getElementById("profile_img");
       var menu = document.getElementById("second_menu");
-        if(scroll_pos>300 && once){
+        if(scroll_pos>300){
             //img.classList.add('horizTranslate');
-            once= false;
+            //once= false;
         }
-        if(scroll_pos>800 && second){
-             //menu.style.display = "flex";
-             second = false;
-        }else if (scroll_pos<800 && !second){
-             //menu.style.display = "none"
-             second = true;
+        if(scroll_pos>300 && once){
+              var n = document.getElementsByClassName("progress");
+              var percent_final = document.getElementsByClassName("percent_answer");
+              var percent_bar = document.getElementsByClassName("percent_bar")
+              for(var i =0;i<n.length;i++){    
+                // go through each progess bar and animate it
+                processBar(percent_final,percent_bar,i);
+              }   
+              
+             once= false;    
         }
+        
+  }
+  
+});
+/*
+* A method that take in process bar and animate
+*/
+  function processBar(bar,element,number){
+    var p =0;
+    var intValue = parseInt(bar[number].innerHTML); 
+    var timer = setInterval(function () {
+      if (intValue<p){
+        clearInterval(timer);
+      }
+        bar[number].innerHTML = p+"%";
+        element[number].style.width = p +"%";
+        p++;
+      },5);
   }
 
   function fadein(element) {
@@ -72,6 +93,3 @@ $(document).ready(
   //  dev.innerHTML = "Full Stack Developer";
   //  fadeout(dev);
   //}
-
-
-});
