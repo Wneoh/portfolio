@@ -1,43 +1,58 @@
 
 let last_known_scroll_position = 0;
 let ticking = false;
+let newPos = 0;
 let once =true;
 
 $(document).ready(
   function(){
-    window.addEventListener('scroll', function(e) {
-    last_known_scroll_position = window.scrollY;
-
+    var n = document.getElementsByClassName("progress");
+    var percent_final = document.getElementsByClassName("percent_answer");
+    var percent_bar = document.getElementsByClassName("percent_bar")
+    var skills = document.getElementById("skills");
+    
+    window.addEventListener('scroll', function(event) {
+    last_known_scroll_position = this.scrollY;
+    
     if (!ticking) {
       window.requestAnimationFrame(function() {
-        doSomething(last_known_scroll_position);
+        animateProfile(last_known_scroll_position);
+        animateProcessBar(last_known_scroll_position);
+        animateMenu(last_known_scroll_position); // check if the user is scolling up
         ticking = false;
       });
-      window.cancelAnimationFrame(timer);
       ticking = true;
     }
-  });
+  },false);
 
-  function doSomething(scroll_pos) {
-      var img =document.getElementById("profile_img");
-      var menu = document.getElementById("second_menu");
-        if(scroll_pos>300){
-            //img.classList.add('horizTranslate');
-            //once= false;
-        }
-        if(scroll_pos>300 && once){
-              var n = document.getElementsByClassName("progress");
-              var percent_final = document.getElementsByClassName("percent_answer");
-              var percent_bar = document.getElementsByClassName("percent_bar")
-              for(var i =0;i<n.length;i++){    
-                // go through each progess bar and animate it
-                processBar(percent_final,percent_bar,i);
-              }   
-              
-             once= false;    
-        }
-        
+
+  function animateMenu(position){
+    var oldPos = position;
+      if(oldPos - newPos < 0){
+        document.getElementById("menu").style.top = "0%";
+      } else if(oldPos - newPos > 0){
+        document.getElementById("menu").style.top = "-10%";
+      }
+    newPos = oldPos;
   }
+
+  function animateProfile(position){
+    if(position>=370){
+      document.getElementById("profile_left_container").classList.add('bounceInLeft'); // animate profile left
+      document.getElementById("profile_right_container").classList.add('bounceInRight');// animate profile right
+  }
+}
+
+  function animateProcessBar(position) {
+    if(position>=370 && once){
+      fadein(skills)
+      for(var i =0;i<n.length;i++){    
+        // go through each progess bar and animate it
+        processBar(percent_final,percent_bar,i);
+    }  
+    once =false; 
+  }
+}
   
 });
 /*
@@ -53,7 +68,7 @@ $(document).ready(
         bar[number].innerHTML = p+"%";
         element[number].style.width = p +"%";
         p++;
-      },5);
+      },1);
   }
 
   function fadein(element) {
