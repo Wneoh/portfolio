@@ -10,7 +10,13 @@ $(document).ready(
     var percent_final = document.getElementsByClassName("percent_answer");
     var percent_bar = document.getElementsByClassName("percent_bar")
     var skills = document.getElementById("skills");
-    
+    let profile_image = document.getElementById("profile_img");
+
+
+    //function that runs all the time
+    animateImage(profile_image);
+
+    // function that runs only when scroll
     window.addEventListener('scroll', function(event) {
     last_known_scroll_position = this.scrollY;
     
@@ -19,12 +25,34 @@ $(document).ready(
         animateProfile(last_known_scroll_position);
         animateProcessBar(last_known_scroll_position);
         animateMenu(last_known_scroll_position); // check if the user is scolling up
+        
         ticking = false;
       });
       ticking = true;
     }
   },false);
 
+
+  function animateImage(elem){
+    let images= ["./asset/img/profile1.png"], index = 0;
+
+    function changeImage()
+    {
+     
+     $("#profile_img").fadeOut(1000,function(){
+      elem.setAttribute("src",images[index]);
+      $("#profile_img").fadeIn(500);
+     });
+     
+     
+      index++;
+      if(index >= images.length)
+      {
+        index=0;
+      }
+    }
+  setInterval(changeImage, 8000);
+}
 
   function animateMenu(position){
     var oldPos = position;
@@ -86,8 +114,8 @@ $(document).ready(
     var op = 1;  // initial opacity
     var timer = setInterval(function () {
         if (op <= 0){
-            element.innerHTML ="Developer Of Anything";
-            fadein(element);
+            //element
+            //fadein(element);
             clearInterval(timer);
         }
         element.style.opacity = op;

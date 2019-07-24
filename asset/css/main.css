@@ -41,8 +41,10 @@
 
   }
   .line{
-    color:#E0FBFC;  
+    color: #E0FBFC;
+    background: #E0FBFC;
     width: 8vw;
+    height: 2px;
     margin-top: 6vh;
     margin-bottom: 6vh;
   }
@@ -186,6 +188,7 @@
         display:flex;
         padding-left: 2vw;
         padding-right: 2vw;
+        position: relative;	
     }
     #aboutme{
       display: flex;
@@ -200,7 +203,7 @@
     }
 /* profile left section*/
       #profile_left_container{
-        flex-grow:1;
+        flex-grow:unset;
         margin:2vw;
         -webkit-animation-duration: 2s; 
         animation-duration: 2s; 
@@ -216,21 +219,34 @@
         -webkit-box-shadow: -5px 0px 10px 2px #3A506B; 
         box-shadow: -5px 0px 10px 0px #3A506B;
       }
+      .profile_left h2{
+        margin-left:1vh;
+      }
       #profile_img{
         opacity:1;
       }
-      #profile_small{
+      .profile_small{
         display: flex;
         margin:-3vh;
       }
       .profile_icon{
         width: fit-content;
         height: fit-content;
-        margin: 4vh;
+        margin:5vmin 2vw 2vw 2vw;
       }
       p.profile_text{
-        margin: 4vh;
-        margin-left:0vw;
+        margin:5vmin 0 2vw 0;
+      }
+      .language{
+        margin:1vh;
+      }
+      .language h1{
+        margin:1vh;
+      }
+      .language ul{
+        list-style: none;
+        color:#E0FBFC;
+        padding-left:1px;
       }
       #profile_img.horizTranslate {
         -webkit-transition: 2s;
@@ -483,5 +499,6 @@
   }
 
   * {
-    font-family: 'Changa', sans-serif;
+    font-family: 'Monda', sans-serif;
+
   }

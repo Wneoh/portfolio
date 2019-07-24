@@ -2,7 +2,7 @@ $(document).ready(function(){
     var canvas;
     var ctx;
     var particles = [];
-    var num_particles = 200;
+    var num_particles = window.innerWidth/9;
     var mouse = {
         x: undefined,
         y: undefined
