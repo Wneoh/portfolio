@@ -172,15 +172,7 @@
   }
 
 
-/* Experience section*/
-.experience{
-  background-color: #0B132B;
-  height:auto;
-}
-#experience h1{
-  margin :0;
 
-}
 /* About Section */
     .about_container{
         height: auto;
@@ -188,6 +180,7 @@
         display:flex;
         padding-left: 2vw;
         padding-right: 2vw;
+        padding-bottom:2vw;
         position: relative;	
     }
     #aboutme{
@@ -220,22 +213,19 @@
         box-shadow: -5px 0px 10px 0px #3A506B;
       }
       .profile_left h2{
-        margin-left:1vh;
+        margin-top: 5px;
+        margin-left:20px;
+        margin-bottom: 0px;
       }
       #profile_img{
         opacity:1;
       }
       .profile_small{
         display: flex;
-        margin:-3vh;
+        
       }
       .profile_icon{
-        width: fit-content;
-        height: fit-content;
-        margin:5vmin 2vw 2vw 2vw;
-      }
-      p.profile_text{
-        margin:5vmin 0 2vw 0;
+        padding: 20px;
       }
       .language{
         margin:1vh;
@@ -399,6 +389,7 @@
             flex-flow: column wrap;
             height: 25em;
             padding-left: 0;
+            justify-content: center;
           }
           #skills li{
             margin:15px;
@@ -446,7 +437,45 @@
       -webkit-animation-name: bounceInRight;
       animation-name: bounceInRight;
     }
-      
+/* Experience section*/
+  .experience{
+    background-color: #0B132B;
+    height:auto;
+  }
+  #experience{
+  width: 100%;
+  height: fit-content;
+  padding-top:2em;
+  margin-top:0px;
+  display: flex;
+  justify-content: center;
+  }
+  #experience h1{
+    font-size:40px;
+  }
+  #experience_container{
+    margin:2vw;
+  }
+
+  #experience_line{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    height:auto;
+    z-index:-1;
+  }
+  #line{
+    height:0px;
+    width:5px;
+    background-color: #dd8341;
+    animation:linedown 10s forwards;
+    position: absolute;
+  }
+
+  #line.linedown{
+    width:800px;
+  }
+  
   a{
     text-decoration: none;
     pointer-events: stroke;

@@ -11,7 +11,7 @@ $(document).ready(
     var percent_bar = document.getElementsByClassName("percent_bar")
     var skills = document.getElementById("skills");
     let profile_image = document.getElementById("profile_img");
-
+    var line = document.getElementById("line");
 
     //function that runs all the time
     animateImage(profile_image);
@@ -25,7 +25,7 @@ $(document).ready(
         animateProfile(last_known_scroll_position);
         animateProcessBar(last_known_scroll_position);
         animateMenu(last_known_scroll_position); // check if the user is scolling up
-        
+        line.classList.add("linedown");
         ticking = false;
       });
       ticking = true;
