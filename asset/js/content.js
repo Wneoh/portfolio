@@ -11,11 +11,17 @@ $(document).ready(
     var percent_bar = document.getElementsByClassName("percent_bar")
     var skills = document.getElementById("skills");
     let profile_image = document.getElementById("profile_img");
-    var line = document.getElementById("line");
+    var line = document.getElementById("eline");
+    var experience = document.getElementsByClassName("flex_content");
 
+    for(var i =0; i<experience.length;i++){
+        var top = experience[i].style.height+1 -experience[i];
+          if(line.style.height>top){
+            fadein(experience[i]);
+          }
+    }
     //function that runs all the time
     animateImage(profile_image);
-
     // function that runs only when scroll
     window.addEventListener('scroll', function(event) {
     last_known_scroll_position = this.scrollY;
@@ -25,12 +31,22 @@ $(document).ready(
         animateProfile(last_known_scroll_position);
         animateProcessBar(last_known_scroll_position);
         animateMenu(last_known_scroll_position); // check if the user is scolling up
-        line.classList.add("linedown");
+        animateWorkLine(last_known_scroll_position);
         ticking = false;
       });
       ticking = true;
     }
   },false);
+
+
+  function animateWorkLine(position){
+    if(position>1550){
+      line.classList.add("linedown");
+    }
+      if(line.style.height>experience[1].height){
+        fadeIn(experience);
+    }
+  }
 
 
   function animateImage(elem){
