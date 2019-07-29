@@ -14,14 +14,8 @@ $(document).ready(
     var line = document.getElementById("eline");
     var experience = document.getElementsByClassName("flex_content");
 
-    for(var i =0; i<experience.length;i++){
-        var top = experience[i].style.height+1 -experience[i];
-          if(line.style.height>top){
-            fadein(experience[i]);
-          }
-    }
-    //function that runs all the time
-    animateImage(profile_image);
+    
+
     // function that runs only when scroll
     window.addEventListener('scroll', function(event) {
     last_known_scroll_position = this.scrollY;
@@ -31,7 +25,8 @@ $(document).ready(
         animateProfile(last_known_scroll_position);
         animateProcessBar(last_known_scroll_position);
         animateMenu(last_known_scroll_position); // check if the user is scolling up
-        animateWorkLine(last_known_scroll_position);
+        animateWorkSection(last_known_scroll_position);
+        animateImage(profile_image);
         ticking = false;
       });
       ticking = true;
@@ -39,12 +34,12 @@ $(document).ready(
   },false);
 
 
-  function animateWorkLine(position){
-    if(position>1550){
+  function animateWorkSection(position){
+    if(position>1500){
       line.classList.add("linedown");
-    }
-      if(line.style.height>experience[1].height){
-        fadeIn(experience);
+      for(var i =0; i<experience.length;i++){
+        experience[i].classList.add("fade");
+      }
     }
   }
 
@@ -112,7 +107,7 @@ $(document).ready(
         bar[number].innerHTML = p+"%";
         element[number].style.width = p +"%";
         p++;
-      },1);
+      },10);
   }
 
   function fadein(element) {

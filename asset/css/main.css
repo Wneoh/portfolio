@@ -178,9 +178,10 @@
         height: auto;
         background-color: #5bc0be;
         display:flex;
-        padding-left: 2vw;
-        padding-right: 2vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
         padding-bottom:2vw;
+        margin-top: -1px;
         position: relative;	
     }
     #aboutme{
@@ -440,7 +441,7 @@
 /* Experience section*/
   .experience{
     background-color: #0B132B;
-    height:auto;
+    height: 70em;
   }
   #experience{
   width: 100%;
@@ -454,10 +455,13 @@
     font-size:40px;
   }
   #experience_container{
-    height:120vh;
+    height:815px;
+    font-size: 17px;
     margin-top: 5vh;
-    margin-left: 15vh;
-    margin-right: 15vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    background-color: #3A506B;
+    
   }
   #experience_line{
     display:flex;
@@ -474,55 +478,125 @@
   }
 
   #eline.linedown{
-    height:1000px;
-    transition:all 8s;
-    -webkit-transition: all 8s;
-    -moz-transition: all 8s;
-    -ms-transition: all 8s;
-    -o-transition: all 8s;
+    height:815px;
+    transition:all 6s;
+    -webkit-transition: all 6s;
+    -moz-transition: all 6s;
+    -ms-transition: all 6s;
+    -o-transition: all 6s;
+  }
+
+  .flex_left{
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex_left_container{
+    display: flex;
+    width: 45%;
+    height: 30%;
+    flex-direction: column;
+    margin: 0% 5% 0 0;
   }
 
   .flex_right{
-    display: flex;
-    flex-flow: row wrap;
-    width: 35%;
-    height: 100%;
-    position: absolute;
-    justify-content: center;
-    padding-top:10%;
-  }
-  .flex_left{
-    display: flex;
-    flex-flow: row wrap;
-    width: 45%;
-    height: 100%;
+    width: 50%;
     margin-left: auto;
+    height: 100%;
+    display: flex;
     justify-content: center;
+  }
 
+  .flex_right_container{
+    display: flex;
+    width: 50%;
+    height: 35%;
+    flex-direction: column;
+    margin: 0 0 0 5%;
   }
   
   .flex_content{
     -webkit-align-content: flex-start; 
     align-content: flex-start; 
-    height:10%;
-    width:50%;
     opacity:0;
+    margin-top:3em;
   }
-  
-  .flex_content h3,h4{
+
+.flex_content.fade{
+  animation:fadein 4s;
+  animation-fill-mode: both;
+}
+  .flex_left .flex_content:nth-child(1){
+    animation-delay: .7s
+  }
+  .flex_left .flex_content:nth-child(2){
+    animation-delay: 2.1s;
+    margin-bottom:7em;
+  }
+  .flex_right .flex_content:nth-child(1){
+    animation-delay: 1.4s
+  }
+  .flex_right .flex_content:nth-child(2){
+    animation-delay: 2.8s
+  }
+
+  .flex_content h3,h4,h5{
     color:#C2DFE3;
   }
+  .flex_content h5{
+    margin-top:0px;
+  }
+
   .flex_content h4{
     margin-top: 0px;
+    margin-bottom: 0px;
   }
   .flex_content h3{
     margin-bottom:0px;
   }
   .flex_content .description{
     color: #C2DFE3;
-    width:20em;
+    width:23em;
   }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/*  Work Section */
+
+.work{
+  height:100vh;
+  background-color: #304B7A;
+}
   a{
     text-decoration: none;
     pointer-events: stroke;
