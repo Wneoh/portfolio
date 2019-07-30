@@ -36,10 +36,15 @@ $(document).ready(
 
   function animateWorkSection(position){
     if(position>1500){
-      line.classList.add("linedown");
+      line.classList.add("lineright");
+      
       for(var i =0; i<experience.length;i++){
         experience[i].classList.add("fade");
       }
+
+      // while(line.style.width<500){
+      //  }
+      //  console.log("hit 500");
     }
   }
 
@@ -68,9 +73,11 @@ $(document).ready(
   function animateMenu(position){
     var oldPos = position;
       if(oldPos - newPos < 0){
+        
         document.getElementById("menu").style.top = "0%";
       } else if(oldPos - newPos > 0){
         document.getElementById("menu").style.top = "-10%";
+      
       }
     newPos = oldPos;
   }
