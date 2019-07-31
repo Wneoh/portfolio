@@ -11,8 +11,8 @@ $(document).ready(
     var percent_bar = document.getElementsByClassName("percent_bar")
     var skills = document.getElementById("skills");
     let profile_image = document.getElementById("profile_img");
-    var line = document.getElementById("eline");
-    var experience = document.getElementsByClassName("flex_content");
+   
+
 
     
 
@@ -35,16 +35,25 @@ $(document).ready(
 
 
   function animateWorkSection(position){
+    var line = document.getElementById("eline");
+    var vline = document.getElementsByClassName("vline");
+    var content = document.getElementsByClassName("content_container");
+    var year = document.getElementsByClassName("year");
     if(position>1500){
       line.classList.add("lineright");
-      
-      for(var i =0; i<experience.length;i++){
-        experience[i].classList.add("fade");
-      }
 
-      // while(line.style.width<500){
-      //  }
-      //  console.log("hit 500");
+      for(var i =0; i<vline.length;i++){
+        if(i%2==0){
+          vline[i].classList.add("linedown");
+        }else{
+          vline[i].classList.add("lineup");
+        }
+        year[i].classList.add("yearfade");
+      }
+      for(var i =0; i<content.length;i++){
+        content[i].classList.add("fade");
+      }
+      
     }
   }
 
@@ -142,15 +151,3 @@ $(document).ready(
         console.log(op);
     }, 100);
 }
-
-
-  // changing word
-  //var dev = document.getElementById('dev');
-  //dev.onmouseover = function(){
-    //fadeout(dev);
-    //fadein(dev);
-  //}
-  //dev.onmouseout = function(){
-  //  dev.innerHTML = "Full Stack Developer";
-  //  fadeout(dev);
-  //}
