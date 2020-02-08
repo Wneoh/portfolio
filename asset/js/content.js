@@ -64,10 +64,10 @@ $(document).ready(
     function changeImage()
     {
      
-     $("#profile_img").fadeOut(1000,function(){
-      elem.setAttribute("src",images[index]);
-      $("#profile_img").fadeIn(500);
-     });
+    //  $("#profile_img").fadeOut(1000,function(){
+    //   elem.setAttribute("src",images[index]);
+    //   $("#profile_img").fadeIn(500);
+    //  });
      
      
       index++;
@@ -108,7 +108,36 @@ $(document).ready(
     once =false; 
   }
 }
-  
+
+// Work Modal section
+
+var img = document.getElementsByClassName("work-img");
+var description = document.getElementsByClassName("description");
+var modal,modal_pic,caption;
+for (var i = 0; i < img.length; i++) {
+      img[i].onclick = function(){
+        menu = document.getElementById("menu");
+        menu.style.display = 'none';
+        modal = this.parentElement.parentElement.getElementsByClassName('modal');
+        modal_pic = this.parentElement.parentElement.getElementsByClassName('modal-pic');
+        caption = this.parentElement.parentElement.getElementsByClassName('caption');
+        modal[0].style.display = "flex";
+        modal_pic[0].src = this.src;
+        //caption[0].innerHTML= this.alt;
+  }
+}
+
+
+
+var span = document.getElementsByClassName("close");
+for (var i = 0; i < span.length; i++) {
+      span[i].onclick = function() {
+        menu = document.getElementById("menu");
+        menu.style.display = '';
+        modal1 = this.parentElement;
+        modal1.style.display = "none";
+    }
+  }
 });
 /*
 * A method that take in process bar and animate
@@ -151,3 +180,5 @@ $(document).ready(
         console.log(op);
     }, 100);
 }
+
+

@@ -184,16 +184,8 @@
         margin-top: -1px;
         position: relative;	
     }
-    #aboutme{
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: fit-content;
-      padding-top:2em;
+    #about{
       background-color: #5bc0be;
-    }
-    #aboutme h1{
-      font-size: 40px;
     }
 /* profile left section*/
       #profile_left_container{
@@ -238,6 +230,7 @@
         list-style: none;
         color:#E0FBFC;
         padding-left:1px;
+        
       }
       #profile_img.horizTranslate {
         -webkit-transition: 2s;
@@ -348,7 +341,7 @@
           
         }
          
-        #work{
+        #work_general{
           flex-grow:8;
           margin:2vw;
         }
@@ -382,15 +375,14 @@
 
         #skills{
           opacity: 0;
+          display: flex;
         }
           #skills ul{
             list-style: none;
             color:#C2DFE3;
-            display:flex;
-            flex-flow: column wrap;
-            height: 25em;
             padding-left: 0;
-            justify-content: center;
+            flex-grow: 1;
+            width: 50%;
           }
           #skills li{
             margin:15px;
@@ -439,21 +431,9 @@
       animation-name: bounceInRight;
     }
 /* Experience section*/
-  .experience{
+  #experience{
     background-color: #0B132B;
     height: 60em;
-  }
-  #experience{
-  width: 100%;
-  height: fit-content;
-  padding-top:2em;
-  margin-top:0px;
-  display: flex;
-  justify-content: center;
-  }
-
-  #experience h1{
-    font-size:40px;
   }
   
   .experience_container{
@@ -484,7 +464,7 @@
     padding-left:5%;
     margin-top: 422.7;
   }
-  .description{
+  .main-description{
     color:#C2DFE3;
   }
   #eline{
@@ -645,11 +625,165 @@
 }
 
 /*  Work Section */
-
-.work{
-  height:100vh;
+#work{
+  height:auto;
   background-color: #304B7A;
 }
+.work-container{
+  margin: auto;
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column;
+}
+
+.work-project{
+  display:flex;
+  border-bottom: 1px solid aliceblue;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+.work-project .work-img{
+  cursor: pointer;
+  transition: 0.3s;
+}
+.work-img1{
+  max-width: 100%;
+}
+
+.work-project img:hover{
+  opacity: 0.7;
+}
+
+.gallery-con{
+  width: 50%;
+  display: block;
+  margin: auto;
+}
+
+.gallery-con img{
+  max-width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #333;
+  transition: all 1.5s ease;
+}
+
+.gallery-con img:hover{
+  box-shadow: 0 0 32px #333;
+}
+.modal{
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.90);
+  flex-direction: column;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.modal-pic{
+  margin: auto;
+  display: block;
+  max-width: 700px;
+  
+}
+.close{
+  position:fixed !important;
+}
+.work-pic{
+  width:30%;
+}
+
+.description{
+  padding-left:15%;
+}
+.modal-section{
+  display: flex;
+}
+.modal-content-con{
+  display:flex;
+  flex-direction: column;
+  margin:auto;
+  width:70%;
+}
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+.modal-pic, .caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+.main-description{
+  margin-left:10%;
+}
+
+.project-title{
+  text-align: center;
+}
+
+.description{
+  color:#C2DFE3;
+}
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/*Contact information*/
+#contact{
+  background-color:#008683;;
+}
+
+.contact-container{
+  width:100%;
+  height:80%;
+}
+
+.contact-content{
+  text-align: center;
+}
+.contact-content a{
+  width:50%;
+}
+
   a{
     text-decoration: none;
     pointer-events: stroke;
@@ -700,6 +834,18 @@
     -moz-transform:rotate(180deg); 
     -o-transform:rotate(180deg);
   }
+
+  .title{
+    width: auto;
+    height: fit-content;
+    padding-top:2em;
+    margin-top:0px;
+    display: flex;
+    justify-content: center;
+    }
+    h1{
+      font-size: 40px;
+    }
 
   * {
     font-family: 'Monda', sans-serif;
