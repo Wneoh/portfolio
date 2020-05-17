@@ -1,20 +1,28 @@
 @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 1200px)
+  and (max-device-width: 1000px)
   and (-webkit-min-device-pixel-ratio: 2) {
-
     #menu p{
-        font-size: 25px;
+        font-size: 14px;
+    }
+    .intro_container{
+        top:40%;
+    }
+    #intro_text{
+        max-width: 100%;
+        font-size: 10px;
     }
     #intro_section{
-        height:70vh;
+        height:80vh;
     }
     #canvas{
-        height: 70vh;
+        height: 80vh;
         width: 100%;
     }
     #profile_img{
-        width: 33vw;
+        width: 60vw;
+        margin: auto;
+
     }
     .progress{
         display: none;
@@ -22,6 +30,9 @@
 
     #eline.lineright{
         width:80%;
+    }
+    .profile_right{
+        padding:5vw;
     }
     .content_container {
         width: 150px;
@@ -45,6 +56,9 @@
     .project-title{
         text-align: left;
     }
+    .about_container{
+        flex-direction: column;
+    }
     #work p{
         font-size: 12px;
     }
@@ -52,14 +66,15 @@
         margin-left:5%;
     }
     .gallery-con{
-        width:100vw;
-        margin-top: 6vh;
+        width:200vw;
+        margin-top: 12vh;
     }
     #skills ul{
         list-style: square;
     }
-    .contact-container{
-        height: 50vh;
+    .contact-container {
+        height: 80vh;
+        font-size: 3vw;
     }
     .content_container h2{
         font-size: 14px;
@@ -75,12 +90,97 @@
         display: block;
     }
     .work-project .description p{
-        font-size: 15px !important;
+        font-size: 12px !important;
     }
     .modal-pic{
-        width: 250px;
+        width: 25vw;
+        margin-top:5vw;
     }
+    #profile_img{
+        display:none;
+    }
+    #profile_left_container{
+        width: 80vw;
+        margin: auto;  
+    }
+    #profile_img_small{
+        width:80vw;
+    }
+    #profile_right_container{
+        width: 80vw;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .vline:nth-of-type(5) {
+        margin-left: 80%;
+    }
+    .vline:nth-of-type(4) {
+        margin-left: 59%;
+    }
+    .vline:nth-of-type(3) {
+        margin-left: 35%;
+    }
+    .vline:nth-of-type(2) {
+        margin-left: 15%;
+    }
+    #eline.lineright {
+        width: 100%; 
+    }
+    .flex_container {
+        height: auto;
+        margin:0;
+        font-size: 10px;
+    }
+    .experience_container {
+        margin-left: 0;
+        margin-right: 0; 
+        background:none; 
+    }
+    .content_container{
+        width: 17%;
+    }
+    #contact_button h1{
+        font-size: 30px;
+    }
+    
+  }
+@media only screen 
+and (min-device-width: 700px) 
+and (max-device-width: 1200px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    #profile_left_container{
+        display: flex;
+        margin: 0;
+    }
+    #profile_img{
+        display:none;
+    }
+    #profile_img_small{
+        flex:unset;
+        width: 48vw;
+    }
+    .profile_left{
+        flex: 2;
+    }
+    .content_container {
+        padding-top: 0px;
+    }
+    .description{
+        display: block;
+    }
+    #profile_left_container{
+        margin:auto;
+    }
+    #profile_img_small {
+        width: 40vw;
+    }
+    .gallery-con {
+        width: 120vw;
+        margin-top: 10vw;
+    }
+    
 
+}
 @media (max-width: 1920px) {
 
 }
@@ -88,7 +188,7 @@
 
 
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-device-width: 1600px) {
     /* Experience Section */
 
     .experience_container{ 
@@ -114,4 +214,4 @@
                 margin-left:69%;
             }
         }
-}
+
