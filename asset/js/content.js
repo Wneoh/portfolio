@@ -123,6 +123,7 @@ for (var i = 0; i < img.length; i++) {
         caption = this.parentElement.parentElement.getElementsByClassName('caption');
         modal[0].style.display = "flex";
         modal_pic[0].src = this.src;
+        body.style.position = "fixed";
         //caption[0].innerHTML= this.alt;
   }
 }
