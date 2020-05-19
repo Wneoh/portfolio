@@ -665,6 +665,7 @@ body{
   width: 50%;
   display: block;
   margin: auto;
+  flex:1;
 }
 
 .gallery-con img{
@@ -733,6 +734,7 @@ body{
 }
 .main-description{
   margin-left:10%;
+  flex:3;
 }
 
 .project-title{
