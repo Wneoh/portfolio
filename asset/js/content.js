@@ -123,7 +123,7 @@ for (var i = 0; i < img.length; i++) {
         caption = this.parentElement.parentElement.getElementsByClassName('caption');
         modal[0].style.display = "flex";
         modal_pic[0].src = this.src;
-        body.style.position = "fixed";
+        $("body").css("position","fixed");
         //caption[0].innerHTML= this.alt;
   }
 }
@@ -137,6 +137,7 @@ for (var i = 0; i < span.length; i++) {
         menu.style.display = '';
         modal1 = this.parentElement;
         modal1.style.display = "none";
+        $("body").css("position","relative");
     }
   }
 });

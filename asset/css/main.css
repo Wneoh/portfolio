@@ -454,7 +454,7 @@ body{
   }
   .flex_container{
     display: flex;
-    height: 65%;
+    height: 70%;
     margin: 30px;
     font-size: 15px;
   }
@@ -484,7 +484,7 @@ body{
   }
 
   #eline.lineright{
-    width:85%;
+    width:83%;
     overflow: hidden;
     transition:all 5s;
     -webkit-transition: all 5s;
@@ -510,7 +510,7 @@ body{
     animation-fill-mode: both;
   }
   .vline:nth-of-type(2){
-    height: 2px;
+    height: 1px;
     width: 4px;
     position: absolute;
     align-self: center;
@@ -518,7 +518,7 @@ body{
     animation-delay: 0.7s;
   }
   .vline:nth-of-type(3){
-    height: 2px;
+    height: 1px;
     width: 4px;
     position: absolute;
     align-self: center;
@@ -526,7 +526,7 @@ body{
     animation-delay: 1.4s;
   }
   .vline:nth-of-type(4){
-    height: 2px;
+    height: 1px;
     width: 4px;
     position: absolute;
     align-self: center;
@@ -534,7 +534,7 @@ body{
     animation-delay: 2.1s;
   }
   .vline:nth-of-type(5){
-    height: 2px;
+    height: 1px;
     width: 4px;
     position: absolute;
     align-self: center;
@@ -672,6 +672,7 @@ body{
   border-radius: 8px;
   box-shadow: 0 0 16px #333;
   transition: all 1.5s ease;
+  width:200px;
 }
 
 .gallery-con img:hover{
@@ -697,6 +698,7 @@ body{
   margin: auto;
   display: block;
   max-width: 700px;
+  width:200px;
   
 }
 .close{

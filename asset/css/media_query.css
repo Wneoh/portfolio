@@ -1,5 +1,5 @@
 @media only screen 
-  and (min-device-width: 320px) 
+  and (min-device-width: 100px) 
   and (max-device-width: 1000px)
   and (-webkit-min-device-pixel-ratio: 2) {
     #menu p{
@@ -66,8 +66,11 @@
         margin-left:5%;
     }
     .gallery-con{
-        width:200vw;
-        margin-top: 12vh;
+        width:200px;
+        /* margin-top: 12vh; */
+    }
+    .work-project{
+        display: block;
     }
     #skills ul{
         list-style: square;
@@ -145,13 +148,9 @@
     
   }
 @media only screen 
-and (min-device-width: 700px) 
+and (min-device-width: 1000px) 
 and (max-device-width: 1200px)
 and (-webkit-min-device-pixel-ratio: 2) {
-    #profile_left_container{
-        display: flex;
-        margin: 0;
-    }
     #profile_img{
         display:none;
     }
@@ -168,9 +167,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
     .description{
         display: block;
     }
-    #profile_left_container{
-        margin:auto;
-    }
+   
     #profile_img_small {
         width: 40vw;
     }
@@ -178,11 +175,33 @@ and (-webkit-min-device-pixel-ratio: 2) {
         width: 120vw;
         margin-top: 10vw;
     }
-    
+    .content_container .content{
+        width: 100%;
+    }
+    .vline:nth-of-type(5) {
+        margin-left: 65%;
+    }
+    .vline:nth-of-type(4) {
+        margin-left: 45%;
+    }
+    .vline:nth-of-type(3) {
+        margin-left: 25%;
+    }
+    .vline:nth-of-type(2) {
+        margin-left: 10%;
+    }
+    #eline.lineright {
+        width:75%;
+    }
+    .content_container{
+        font-size: 11px;
+    }
 
 }
 @media (max-width: 1920px) {
-
+    #profile_img_small{
+        display:none;
+    }
 }
 
 
@@ -191,6 +210,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
 @media screen and (min-device-width: 1600px) {
     /* Experience Section */
 
+    #profile_img_small{
+        display:none;
+    }
     .experience_container{ 
         margin-left: 4em;
         margin-right: 4em;
