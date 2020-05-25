@@ -713,8 +713,6 @@ body{
   display: flex;
 }
 .modal-content-con{
-  display:flex;
-  flex-direction: column;
   margin:auto;
   width:70%;
 }
