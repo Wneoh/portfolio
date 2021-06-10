@@ -1,398 +1,160 @@
-@media only screen 
-  and (min-device-width: 100px) 
-  and (max-device-width: 700px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    #menu p{
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #menu p {
         font-size: 14px;
     }
-    .intro_container{
-        top:40%;
-    }
-    #profile_img_small{
-        display:block !important;
-    }
-    #intro_text{
-        max-width: 100%;
+    #intro_text {
         font-size: 10px;
     }
-    #intro_section{
-        height:80vh;
+    #intro_text h1 {
+        font-size: 4.8em;
     }
-    #canvas{
-        height: 80vh;
+    #intro_text h2 {
+        font-size: 1.8em;
+    }
+    #intro_section {
+        height: 100vh;
+    }
+    #canvas {
+        height: 100vh;
         width: 100%;
     }
-    #profile_img{
-        width: 60vw;
-        margin: auto;
-    }
-    .progress{
-        display: none;
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
     }
 
-    #eline.lineright{
-        width:80%;
+    h3 {
+        font-size: 1em;
     }
-    .profile_right{
-        padding:5vw;
-    }
-    .content_container {
-        width: 150px;
-    }
-    .content_container .content {
-        width: 200%;
-    }
-    .experience_container{ 
-        margin-left: 4em;
-        margin-right: 4em;
-    }
-    .vline:nth-of-type(5) {
-        margin-left: 69%;
-    }
-    .description{
-        display:none;
-    }
-    .content_container{
-        padding-top: 35px;
-    }
-    .project-title{
-        text-align: left;
-    }
-    .about_container{
-        flex-direction: column;
-    }
-    #work p{
-        font-size: 12px;
-    }
-    .main-description{
-        margin-left:5%;
-    }
-    .gallery-con{
-        width:200px;
-        /* margin-top: 12vh; */
-    }
-    .work-project{
-        display: block;
-    }
-    #skills ul{
-        list-style: square;
-    }
-    .contact-container {
-        height: 80vh;
-        font-size: 3vw;
-    }
-    .content_container h2{
+
+    p {
         font-size: 14px;
     }
-    #contact_button{
-        margin:80px auto;
+}
+@media only screen and (min-width: 400px) {
+    .tl-item {
+        margin: 20px 35px;
     }
-    .work-project{
-        margin-bottom: 50px;
-        padding-bottom: 50px;
+}
+@media only screen and (min-width: 486px) {
+    .first {
+        opacity: 1;
     }
-    .work-project .description{
-        display: block;
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #menu p {
+        font-size: 16px;
     }
-    .work-project .description p{
-        font-size: 12px !important;
+    #intro_text {
+        font-size: 12px;
     }
-    .modal-pic{
-        width: 25vw;
-        margin-top:5vw;
+    #intro_text h1 {
+        font-size: 5em;
     }
-    #profile_img{
-        display:none;
+    #intro_text h2 {
+        font-size: 2em;
     }
-    #profile_left_container{
-        width: 80vw;
-        margin: auto;  
+    .profile-image-container {
+        width: 170px;
+        height: 170px;
     }
-    #profile_img_small{
-        width:80vw;
+    .about_container {
+        margin: 0 30px;
     }
-    #profile_right_container{
-        width: 80vw;
-        margin: auto;
-        margin-top: 20px;
+    h3 {
+        font-size: 1.2em;
     }
-    .vline:nth-of-type(5) {
-        margin-left: 80%;
+    p {
+        font-size: 16px;
     }
-    .vline:nth-of-type(4) {
-        margin-left: 59%;
+    .tl-item {
+        margin: 20px 55px;
     }
-    .vline:nth-of-type(3) {
-        margin-left: 35%;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .about_container {
+        margin: 0 40px;
     }
-    .vline:nth-of-type(2) {
-        margin-left: 15%;
+    .tl-item {
+        margin: 20px 85px;
     }
-    #eline.lineright {
-        width: 100%; 
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #menu p {
+        font-size: 18px;
     }
-    .flex_container {
-        height: auto;
-        margin:0;
-        font-size: 10px;
+    #intro_text {
+        font-size: 14px;
     }
-    .experience_container {
-        margin-left: 0;
-        margin-right: 0; 
-        background:none; 
+    #intro_text h1 {
+        font-size: 5em;
     }
-    .content_container{
-        width: 17%;
+    #intro_text h2 {
+        font-size: 2em;
     }
-    #contact_button h1{
-        font-size: 30px;
+    .profile-image-container {
+        width: 200px;
+        height: 200px;
     }
-    
-  }
-@media only screen 
-and (min-device-width: 700px) 
-and (max-device-width: 900px)
-and (-webkit-min-device-pixel-ratio: 2) {
-    #profile_left_container{
+    .about_container {
+        margin: 0 50px;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+    p {
+        font-size: 18px;
+    }
+
+    #about,
+    #timeline,
+    #work {
+        padding-bottom: 100px;
+    }
+    .tl-item {
+        margin: 20px 105px;
+    }
+    .all {
+        opacity: 1;
+    }
+    #chain-container .chain {
+        border-left: 15px dotted #333;
+        height: 140px;
+    }
+
+    #menu {
         display: flex;
     }
-    #menu p{
-        font-size: 14px;
-    }
-    .intro_container{
-        top:40%;
-    }
-    #profile_img_small{
-        display:block !important;
-    }
-    #intro_text{
-        max-width: 100%;
-        font-size: 10px;
-    }
-    #intro_section{
-        height:80vh;
-    }
-    #canvas{
-        height: 80vh;
-        width: 100%;
-    }
-    #profile_img{
-        width: 60vw;
-        margin: auto;
-    }
-    .progress{
+    .topnav {
         display: none;
     }
+}
 
-    #eline.lineright{
-        width:80%;
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .about_container {
+        margin: 0 70px;
     }
-    .profile_right{
-        padding:5vw;
-    }
-    .content_container {
-        width: 150px;
-    }
-    .content_container .content {
-        width: 200%;
-    }
-    .experience_container{ 
-        margin-left: 4em;
-        margin-right: 4em;
-    }
-    .vline:nth-of-type(5) {
-        margin-left: 69%;
-    }
-    .description{
-        display:none;
-    }
-    .content_container{
-        padding-top: 35px;
-    }
-    .project-title{
-        text-align: left;
-    }
-    .about_container{
-        flex-direction: column;
-    }
-    #work p{
-        font-size: 12px;
-    }
-    .main-description{
-        margin-left:5%;
-    }
-    .gallery-con{
-        width:200px;
-        /* margin-top: 12vh; */
-    }
-    .work-project{
-        display: block;
-    }
-    #skills ul{
-        list-style: square;
-    }
-    .contact-container {
-        height: 80vh;
-        font-size: 3vw;
-    }
-    .content_container h2{
-        font-size: 14px;
-    }
-    #contact_button{
-        margin:80px auto;
-    }
-    .work-project{
-        margin-bottom: 50px;
-        padding-bottom: 50px;
-    }
-    .work-project .description{
-        display: block;
-    }
-    .work-project .description p{
-        font-size: 12px !important;
-    }
-    .modal-pic{
-        width: 25vw;
-        margin-top:5vw;
-    }
-    #profile_img{
-        display:none;
-    }
-    #profile_left_container{
-        width: 80vw;
-        margin: auto;  
-    }
-    #profile_img_small{
-        width:80vw;
-    }
-    #profile_right_container{
-        width: 80vw;
-        margin: auto;
-        margin-top: 20px;
-    }
-    .vline:nth-of-type(5) {
-        margin-left: 80%;
-    }
-    .vline:nth-of-type(4) {
-        margin-left: 59%;
-    }
-    .vline:nth-of-type(3) {
-        margin-left: 35%;
-    }
-    .vline:nth-of-type(2) {
-        margin-left: 15%;
-    }
-    #eline.lineright {
-        width: 100%; 
-    }
-    .flex_container {
-        height: auto;
-        margin:0;
-        font-size: 10px;
-    }
-    .experience_container {
-        margin-left: 0;
-        margin-right: 0; 
-        background:none; 
-    }
-    .content_container{
-        width: 17%;
-    }
-    .profile_left{
-        padding: 1%;
-    }
-    #contact_button h1{
-        font-size: 30px;
+    .tl-item {
+        margin: 20px 200px;
     }
 }
-@media only screen 
-and (min-device-width: 900px) 
-and (max-device-width: 1200px)
-and (-webkit-min-device-pixel-ratio: 2) {
-    #profile_img{
-        display:block;
-    }
-    #profile_img_small{
-        flex:unset;
-        width: 48vw;
-    }
-    .profile_left{
-        flex: 2;
-    }
-    .content_container {
-        padding-top: 0px;
-    }
-    
-    .description{
-        display: block;
-    }
-   
-    #profile_img_small {
-        width: 40vw;
-    }
-    .gallery-con {
-        width: 120vw;
-        margin-top: 10vw;
-    }
-    .content_container .content{
-        width: 100%;
-    }
-    .vline:nth-of-type(5) {
-        margin-left: 65%;
-    }
-    .vline:nth-of-type(4) {
-        margin-left: 45%;
-    }
-    .vline:nth-of-type(3) {
-        margin-left: 25%;
-    }
-    .vline:nth-of-type(2) {
-        margin-left: 10%;
-    }
-    #eline.lineright {
-        width:75%;
-    }
-    .content_container{
-        font-size: 11px;
-    }
 
-}
 @media (max-width: 1920px) {
-    #profile_img_small{
-        display:none;
+    #profile_img_small {
+        display: none;
     }
 }
 
-
-
-
-@media screen and (min-device-width: 1600px) {
-    /* Experience Section */
-
-    #profile_img_small{
-        display:none;
+@media screen and (min-device-width: 1200px) {
+    /* profile section */
+    .about_container {
+        padding: 0 8em;
     }
-    .experience_container{ 
-        margin-left: 4em;
-        margin-right: 4em;
-    }
-    .flex_container{
-        
-    }
-        .content_container{
-            width:220px;
-        }
-        .content_container .content{
-            width:400px;
-        }
-            .vline:nth-of-type(2) {
-                margin-left:14%;
-            }
-            .vline:nth-of-type(4) {
-                margin-left:50%;
-            }
-            .vline:nth-of-type(5) {
-                margin-left:69%;
-            }
-        }
-
+}

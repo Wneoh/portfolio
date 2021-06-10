@@ -15,10 +15,6 @@ $(document).ready(function(){
         init();
     };
 
-    //window.addEventListener('mousemove', mousePosition);
-    //canvas.addEventListener('mouseout', mouseOut);
-    //window.addEventListener('scroll', mouseOut);
-    //window.addEventListener('mouseenter', mousePosition);
     window.addEventListener('resize', resizeCanvas);
 
 
@@ -82,8 +78,8 @@ $(document).ready(function(){
             this.vy = Math.random()*-1.2;
         }
 
-        this.Color = "#3a506b";
-        this.radius = 2.5;
+        this.Color = "#d4e7ff";
+        this.radius = 2;
 
         this.draw = function () {
             ctx.beginPath();

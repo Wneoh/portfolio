@@ -10,104 +10,50 @@ $(document).ready(
     var percent_final = document.getElementsByClassName("percent_answer");
     var percent_bar = document.getElementsByClassName("percent_bar")
     var skills = document.getElementById("skills");
-    let profile_image = document.getElementById("profile_img");
-   
 
+    // close burger menu if a link is clicked
 
-    
+    var linkMenu = document.getElementById("myLinks");
+    linkMenu.classList.add("active");
+    var burgerIcon = document.getElementById("burger-icon");
+    burgerIcon.addEventListener("click", function(e){
+      var linkMenu = document.getElementById("myLinks");
+      var allLinks = document.querySelectorAll(".topnav #myLinks a");
+      var linkHeight = allLinks[0].offsetHeight;
+      var numOfLinks = allLinks.length;
+      if(linkMenu.classList.contains("active")){
+        linkMenu.style.height = (linkHeight*numOfLinks) +"px";
+        linkMenu.classList.remove("active");
+      }else{
+        linkMenu.style.height = "0px";
+        linkMenu.classList.add("active");
+      }
+    });
 
+    // burger action
+    var allLinks = document.querySelectorAll(".link");
+    allLinks.forEach(function(elem) {
+      elem.addEventListener("click", function() {
+        burgerIcon.click();
+      });
+  });
+    window.addEventListener('click', function(event) {
+      if (event.target.id == "canvas") {
+        linkMenu.style.height = "0px";
+        linkMenu.classList.add("active");
+      }
+    },false);
     // function that runs only when scroll
     window.addEventListener('scroll', function(event) {
     last_known_scroll_position = this.scrollY;
-    
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        animateProfile(last_known_scroll_position);
-        animateProcessBar(last_known_scroll_position);
-        animateMenu(last_known_scroll_position); // check if the user is scolling up
-        animateWorkSection(last_known_scroll_position);
-        animateImage(profile_image);
-        ticking = false;
-      });
-      ticking = true;
+
+    if (last_known_scroll_position > 620 ) {
+      document.getElementById("menu").style.backgroundColor = "#0B132B";
+      console.log(document.getElementById("menu"));
+    }else{
+      document.getElementById("menu").style.backgroundColor = "";
     }
   },false);
-
-
-  function animateWorkSection(position){
-    var line = document.getElementById("eline");
-    var vline = document.getElementsByClassName("vline");
-    var content = document.getElementsByClassName("content_container");
-    var year = document.getElementsByClassName("year");
-    if(position>1500){
-      line.classList.add("lineright");
-
-      for(var i =0; i<vline.length;i++){
-        if(i%2==0){
-          vline[i].classList.add("linedown");
-        }else{
-          vline[i].classList.add("lineup");
-        }
-        year[i].classList.add("yearfade");
-      }
-      for(var i =0; i<content.length;i++){
-        content[i].classList.add("fade");
-      }
-      
-    }
-  }
-
-
-  function animateImage(elem){
-    let images= ["./asset/img/profile1.png"], index = 0;
-
-    function changeImage()
-    {
-     
-    //  $("#profile_img").fadeOut(1000,function(){
-    //   elem.setAttribute("src",images[index]);
-    //   $("#profile_img").fadeIn(500);
-    //  });
-     
-     
-      index++;
-      if(index >= images.length)
-      {
-        index=0;
-      }
-    }
-  setInterval(changeImage, 8000);
-}
-
-  function animateMenu(position){
-    var oldPos = position;
-      if(oldPos - newPos < 0){
-        
-        document.getElementById("menu").style.top = "0%";
-      } else if(oldPos - newPos > 0){
-        document.getElementById("menu").style.top = "-10%";
-      
-      }
-    newPos = oldPos;
-  }
-
-  function animateProfile(position){
-    if(position>=370){
-      document.getElementById("profile_left_container").classList.add('bounceInLeft'); // animate profile left
-      document.getElementById("profile_right_container").classList.add('bounceInRight');// animate profile right
-  }
-}
-
-  function animateProcessBar(position) {
-    if(position>=370 && once){
-      fadein(skills)
-      for(var i =0;i<n.length;i++){    
-        // go through each progess bar and animate it
-        processBar(percent_final,percent_bar,i);
-    }  
-    once =false; 
-  }
-}
 
 // Work Modal section
 
@@ -124,11 +70,8 @@ for (var i = 0; i < img.length; i++) {
         modal[0].style.display = "flex";
         modal_pic[0].src = this.src;
         $("body").css("position","fixed");
-        //caption[0].innerHTML= this.alt;
   }
 }
-
-
 
 var span = document.getElementsByClassName("close");
 for (var i = 0; i < span.length; i++) {
@@ -141,46 +84,6 @@ for (var i = 0; i < span.length; i++) {
     }
   }
 });
-/*
-* A method that take in process bar and animate
-*/
-  function processBar(bar,element,number){
-    var p =0;
-    var intValue = parseInt(bar[number].innerHTML); 
-    var timer = setInterval(function () {
-      if (intValue<p){
-        clearInterval(timer);
-      }
-        bar[number].innerHTML = p+"%";
-        element[number].style.width = p +"%";
-        p++;
-      },10);
-  }
 
-  function fadein(element) {
-      var op = 0.1;  // initial opacity
-      var timer = setInterval(function () {
-          if (op >= 1){
-              clearInterval(timer);
-          }
-          element.style.opacity = op;
-          element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-          op += op * 0.3;
-      }, 100);
-  }
-  function fadeout(element) {
-    var op = 1;  // initial opacity
-    var timer = setInterval(function () {
-        if (op <= 0){
-            //element
-            //fadein(element);
-            clearInterval(timer);
-        }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op -=.5 ;
-        console.log(op);
-    }, 100);
-}
 
 

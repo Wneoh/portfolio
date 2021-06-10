@@ -1,0 +1,412 @@
+<html>
+    <title>Wei Chin</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="./asset/css/main.css">
+    <link rel="stylesheet" href="./asset/css/media_query.css">
+    <link href="https://fonts.googleapis.com/css?family=Monda&display=swap" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="asset/js/content.js"></script>
+    <script src="./asset/js/myparticle.js"></script>
+    <head>
+        <div id = "menu">
+            <a href="#about"><p>About</p></a>
+            <a href="#experience"><p>Experience</p></a>
+            <a href="#work"><p>Work</p></a>
+            <a href="#contact"><p>Contact</p></a>  
+        </div>
+    </head>
+    <body>
+        <section id = "intro_section">
+                <canvas id ="canvas"></canvas>  
+            <div class ="intro_container">               
+                    <div id = "intro_text"> 
+                        <h1>Wei Chin</h1>
+                        <h2>Full Stack Developer</h2>
+                        <hr class = "line"></hr>
+                        <div id ="mission">
+                            <h2>Constantly challenge difficulties by making something <div class= "stat">
+                                <span>Awesome.</span>
+                                <span>Great bruh.</span>
+                                <span>Cool yo.</span>
+                                <span>extraordinary.</span>
+                                <span>sublime.</span>
+                                <div>
+                                </h2>
+                        </div>
+                        <div id ="icons">
+                            <a href ="https://github.com/Wneoh" target="_blank"><img class ="icon" src="./asset/icon/icon_github.png" alt="github"> </a>
+                            <a href ="https://www.linkedin.com/in/wei-chin-neoh-10131996/" target="_blank" ><img class ="icon" src="./asset/icon/icon_linkedin.png" alt="linkedIn"></a>
+                            <a href ="https://www.facebook.com/wneoh" target="_blank"> <img class ="icon" src="./asset/icon/icon_fb.png" alt="facebook"></a>
+                        </div>  
+                    </div>      
+                </div>
+            <!-- <div class ="nav_container">
+                <div class ="nav_item">
+                    <a href="#aboutme"><p>About</p></a>
+                    <a href="#experience"><p>Experience</p></a>
+                    <a href="#aboutme"><p>Work</p></a>
+                    <a href="#aboutme"><p>Contact</p></a>  
+                </div>
+            </div> -->
+        </section>
+        <section id = "about">
+            <div class ="title"><h1>- About Me -</h1></div>
+            <div class = "about_container"> 
+                <div id ="profile_left_container">
+                    <img id ="profile_img_small" src ="./asset/img/profile1.png" alt="profile_image">  
+                    <div class = "profile_left">    
+                        <img id ="profile_img" src ="./asset/img/profile1.png" alt="profile_image">  
+                        <div class ="profile_small">
+                            <img class ="profile_icon"src="./asset/icon/small_profile_icon.png" alt="">
+                            <p class = "profile_text">Wei Chin Neoh</p>
+                        </div>
+                        <div class ="profile_small">
+                            <img class ="profile_icon"src="./asset/icon/work_profile_icon.png" alt="">
+                            <p class = "profile_text">Full Stack Developer</p>
+                        </div>
+                        <div class ="profile_small">
+                                <img class ="profile_icon"src="./asset/icon/envelope_profile_icon.png" alt="">
+                                <p class = "profile_text">weichin092@gmail.com</p> 
+                        </div>
+                            <h2>Language</h2>
+                                <div class ="profile_small">
+                                        <img class ="profile_icon"src="./asset/icon/chat_icon.png" alt="">
+                                        <p class = "profile_text">Mandarin</p> 
+                                </div>
+                                <div class ="profile_small">
+                                        <img class ="profile_icon"src="./asset/icon/chat_icon.png" alt="">
+                                        <p class = "profile_text">English</p> 
+                                </div>
+                        </div>
+                    </div>
+                <div id ="profile_right_container">
+                    <div class ="profile_right">
+                        <p>Hey there! I am Wei Chin, but you can call me Victor.</p> 
+                        <p>I just graduated from Hardin-Simmons University with a degree of B. S. in Computer Science.</p> 
+                        <p>I am a person who lives by the principle, "Attitude is everything."</p> 
+                        <p>I constantly strive to learn new things and seek advices for improvement in everything.</p> 
+                        <p>I am passionate about coding, especially when it involves creating applications that help others to succeed in what they are doing. </p>
+                        <p>Feel free to contact me if you need my help or know more about me!</p>
+                        <a href="#contact"><button id ="contact_button"><span>Contact Me!</span></button></a>
+                        <h2 class="skill"> Software Skills</h2>
+                        <div id= "skills">
+                            <ul> 
+                                <li>
+                                    <div class ="skill">
+                                        <p>Java</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">92</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Javascript</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">86%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Aws Linux / Docker</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">88%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Python</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">83%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Php</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">87%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Html/Css</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">90%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Git</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">90%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Sql</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">90%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Wordpress</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">90%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class ="skill">
+                                        <p>Bash</p>
+                                        <div class ="progress">
+                                            <div class ="percent_bar"><p class ="percent_answer">88%</p></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        </section>
+        <section id = "experience">
+            <div class ="title"><h1>- Experience -</h1></div>
+            <div class ='experience_container'>
+                <div class ="flex_box">
+                    <div class="flex_container">
+                        <div id ="eline"></div> 
+                   
+                        <div class ="vline">
+                            <div class ="year">2018</div>
+                        </div>
+                        <div class = "vline">
+                                <div class ="year">2019</div>
+                        </div>
+                        <div class = "vline">
+                                <div class ="year">2019</div>
+                        </div>
+                        <div class = "vline">
+                                <div class ="year">2020</div>
+                        </div>
+                        <div class ="content_container">
+                            <div class ="content">
+                            <h2>Barista</h2>
+                            <h3>Aramark</h3>
+                            <h4>Sept 2016–May 2018</h4>
+                            <ul class ="description">
+                                <li>Acted with sincerity and excellent attitude to promote Aramark's coffees.</li>      
+                            </ul>
+                            </div>
+                        </div>
+                        <div class ="content_container">      
+                        <div class ="content">
+                            
+                            <h2>Frontend Web Developer (WordPress)</h2>
+                            <h3>Hardin-Simmons University</h3>
+                            <h4>Jun 2018 – May 2019</h4>
+                            <ul class ="description">
+                                <li>Programming, developing, and producing data-driven web applications, websites using WordPress</li> 
+                            </ul>
+                        </div>
+                        </div>
+                        <div class ="content_container">
+                            <div class ="content">
+                                <h2>Web Designer Apprentice</h2>
+                                <h3>Funeral Directors Life (FDLIC)</h3>
+                                <h4>Jun 2019 – July 2019</h4>
+                                <ul class ="description">
+                                    <li>Developing mobile-friendly, web-based experiences accurate to designs and company expectations</li> 
+                                </ul>
+                        </div>
+                        </div>
+                        <div class ="content_container">
+                                <div class ="content">
+                                
+                                <h2>HelpDesk Techncian</h2>
+                            <h3>Hardin-Simmons University</h3>
+                            <h4>Apr 2017-May 2020</h4>
+                            <ul class ="description">
+                                <li>Troubleshoot, diagnosed and resolved technical hardware and software issues </li> 
+                            </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+        <section id = "work">
+            <div class ="title"><h1>- Work-</h1></div>
+            <div class = "work-container">
+                <div class = "work-project">
+                    <div class="gallery-con">
+                        <img class="work-img" src="./asset/img/work/LitS/loginpage.PNG" alt="Lits" style="width:100%;max-width:300px">
+                    </div>
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <div class ="modal-content-con">
+                            <div class ="modal-section">
+                            <div class="work-pic">
+                                <img class="modal-pic">
+                                <div class="caption"></div>
+                            </div>
+                                <div class="description">
+                                    <p><Strong>Login Page</Strong></p> 
+                                    <p>LitS uses a platform tool called Firebase to operate authentication and database function.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="modal-content-con">
+                            <div class ="modal-section">
+                            <div class="work-pic">
+                                <img class = "modal-pic" src="./asset/img/work/LitS/resgisterpage.PNG" alt="Register Page">
+                                <div class="caption"></div>
+                            </div>
+                                <div class="description"><p><strong>Register Page</strong></p>
+                                    <p> These information will be store in the database at Firebase. </p>
+                                    <p>Email will be check in the database to ensure that there is no duplication.</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="modal-content-con">
+                            <div class ="modal-section">
+                            <div class="work-pic">
+                                <img class = "modal-pic" src="./asset/img/work/LitS/setup_profile.PNG" alt="Setup Profile Page">
+                                <div class="caption"></div>
+                            </div>
+                                <div class="description">
+                                    <p><strong>Setup Page</strong></p>
+                                    <p>After registered, user will be directed to create a profile for themselves.</p>
+                                    <p>Information that required to set up a profile: Profile Picture, Username, Full Name, Country and Gender.</p> 
+                                    <p>These information will also be store in Firebase.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="modal-content-con">
+                            <div class ="modal-section">
+                            <div class="work-pic">
+                                <img class = "modal-pic" src="./asset/img/work/LitS/homepage.PNG" alt="Home Page">
+                                <div class="caption"></div>
+                            </div>
+                                <div class="description"><p>
+                                    <strong>Home Page</strong></p>
+                                    <p>Home Page will display all the posts that have been posted by other user regardless of wherether you are following the other users or not.</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="modal-content-con">
+                            <div class ="modal-section">
+                            <div class="work-pic">
+                                <img class = "modal-pic" src="./asset/img/work/LitS/addpost.PNG" alt="Add Post Page">
+                                <div class="caption"></div>
+                            </div>
+                                <div class="description"><p><strong>Add Post Page</strong> </p>
+                                    <p>Once user post whatever they want to share like a favorite poem, a short story or an idiom, the post will appear in the home page.</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-description">
+                        <h2 class="project-title">LitS</h2>
+                        <p>LitS is an android application that helps people who love reading or writing to share their works to a community/group who know to appreciate their works. The main purpose of this application is to build a strong community that focus on literature.</p> 
+                        <p>Tools:<strong> Android Studio, Firebase </strong></p>
+                        <p>Programming Language: <strong> XML, Java</strong> </p>
+                        <p>Click on the image for more information.</p>   
+                    </div>
+                </div>
+                <div class = "work-project">
+                    <div class="gallery-con">
+                        <a href="http://bancom-env.eba-zqunyhjf.ap-southeast-1.elasticbeanstalk.com/">
+                        <img class="work-img" src="./asset/img/work/Bancom/bancom1.PNG" alt="Bancom" style="width:100%;max-width:100%">
+                    </a>
+                    </div>
+                    <div class="main-description">
+                        <h2 class="project-title">Bancom</h2>
+                        <p>Bancom is a web-based e-commerce application that sells different types of electronics.</p>
+                        <p>Bancom has a role-based system thats distinguishes between user and admin.</p>
+                        <p>Admin in Bancom is allowed to delete, add or edit a product. While user is allowed to view product's detail, add, edit and update a cart.</p>
+                        <p>With the role-based system feature, Bancom helps admin to manage products efficiently. </p>
+                        <p>Tools:<strong> Visual Studio</strong></p>
+                        <p>Programming Language: <strong>Html, Css, Node.js</strong> </p>
+                        <p>Click on the image for production website.</p>   
+                        <p>Products on the website are just for placeholder purposes.</p>
+                    </div>
+                </div>
+                <!--
+                <div class = "work-project">
+                    <div class="gallery-con">
+                        <img class="work-img" src="./asset/img/work/Weino/Login.PNG" alt="Weino" style="width:100%;max-width:100%">
+                    </div>
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <div class ="model-content-con">
+                            <div class ="modal-section">
+                                <div class="work-pic">
+                                    <img class="modal-pic">
+                                    <div class="caption"></div>
+                                </div>
+                                    <div class="description"><p><strong>Login Page</strong></p>
+                                        <p>Weino checks the user authentication by php.</p> 
+                                    </div>
+                                </div>
+                        </div>
+                        <div class ="model-content-con">
+                            <div class ="modal-section">
+                                <div class="work-pic">
+                                    <img class = "modal-pic" src="./asset/img/work/Weino/Register.PNG" alt="Register Page">
+                                    <div class="caption"></div>
+                                </div>
+                                    <div class="description"><p><strong>Register Page</strong></p>
+                                        <p>Register user and asked for information about student/user, especially for catagory in order to send notifications for interest user.</p> 
+                                    </div>
+                                </div>
+                        </div>
+                        <div class ="model-content-con">
+                            <div class ="modal-section">
+                                <div class="work-pic">
+                                    <img class = "modal-pic" src="./asset/img/work/Weino/Home.PNG" alt="Home Page">
+                                    <div class="caption"></div>
+                                </div>
+                                    <div class="description"><p><strong>Home Page</strong></p>
+                                        <p>Home page will be on a dashboard that shows your profile, notification and the project that you have taken on to helps others or the project you created.</p> 
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="main-description">
+                        <h2 class="project-title">Weino (Not complete)</h2>
+                        <p>Weino is a web application that helps student to achieve their creative ideas without the limit of resources.</p>
+                        <p>Often times, students do not tend to get involve in networking events themselves to know connections around the campus.</p>
+                        <p>Therefore, Weino application allows students to post creative ideas that they need asists with the right connections around campus without physically involve events all the times</p>
+                        <p>Weino is a school based web application that not only helps students achieve their goals but only improve student productivity based on their interest.</p>
+                        <p>Tools:<strong> Visual Studio</strong></p>
+                        <p>Programming Language: <strong>Html, Css, Php, Mysql, Javascript</strong> </p>
+                        <p>Click on the image for more information.</p>   
+                    </div>
+                </div>
+            -->
+            </div>
+        </section>
+        <section id = "contact">
+            <div class ="title"><h1>- Contact-</h1></div>
+            <div class = "contact-container">
+                <div class="contact-content"> 
+                    <h2>If you need help or source code for my projects, feel free to contact me!</h2>
+                    <a id = "contact_button" href="mailto:weichin092@gmail.com"><h1>Contact me!</h1></a>
+                </div>
+            </div>
+        </section>
+    </body>
+    
+</html>

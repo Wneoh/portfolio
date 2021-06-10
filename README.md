@@ -7,4 +7,4 @@ Portfolio website
 <p>-Project Section </p>
 <p>-Contact Section</p>
 
-<p>Everything is designed and developed by Wei Chin</p>
+<p>Designed and developed by Wei Chin</p>
