@@ -1,160 +1,41 @@
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    #menu p {
-        font-size: 14px;
-    }
-    #intro_text {
-        font-size: 10px;
-    }
-    #intro_text h1 {
-        font-size: 4.8em;
-    }
-    #intro_text h2 {
-        font-size: 1.8em;
-    }
-    #intro_section {
-        height: 100vh;
-    }
-    #canvas {
-        height: 100vh;
-        width: 100%;
-    }
-    .profile-image-container {
-        width: 150px;
-        height: 150px;
-    }
-
-    h3 {
-        font-size: 1em;
-    }
-
-    p {
-        font-size: 14px;
-    }
+@media(max-width:1000px){.container{width:calc(100% - 64px)}nav{gap:20px}.hero{gap:40px;padding-top:60px}.portrait-frame{height:320px}.portrait figcaption{flex-direction:column;gap:0}.project{gap:32px}.project-visual{height:330px}.about-grid{gap:50px}.screen-gallery{grid-template-columns:repeat(3,1fr)}h1{letter-spacing:-2px}}
+@media(min-width:761px){.menu-toggle:not([hidden]){display:none}}
+@media(max-width:760px){.container{width:calc(100% - 40px)}.header-inner{min-height:74px;height:auto;flex-wrap:wrap;padding-block:15px;gap:12px}nav{width:100%;flex-wrap:wrap;gap:12px 20px;font-size:13px;padding-bottom:8px}.js nav{display:none}.js nav.is-open{display:flex}.js .menu-toggle{display:block}.hero{grid-template-columns:1fr;padding-top:46px;gap:40px}.hero-copy{max-width:560px}h1{font-size:clamp(40px,8.5vw,58px)}.hero-description{font-size:16px}.portrait{width:min(340px,100%);justify-self:center;padding-top:0}.portrait-frame{height:330px}.portrait figcaption{flex-direction:row;font-size:10px}.hero-bottom{gap:20px;font-size:10px;align-items:start}.hero-bottom span{max-width:230px}.hero-bottom a{white-space:nowrap}.section{padding-block:60px}.section-heading{display:block;margin-bottom:32px}.section-heading>p,.section-heading>.text-link{margin-top:20px}.project{grid-template-columns:1fr;gap:28px}.project-visual{height:330px}.project-copy h3{font-size:30px}.project-details{margin-bottom:36px}.screen-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.screen-gallery img{height:240px}.experience{grid-template-columns:1fr;gap:18px;padding-block:25px}.experience h3{font-size:20px}.about-grid{grid-template-columns:1fr;gap:16px}.skills{padding-top:20px}footer{flex-wrap:wrap;gap:8px 20px}footer p:nth-child(2){order:3;width:100%}footer>a{margin-left:auto}.actions{gap:20px}.button{gap:16px;padding-inline:18px}summary span{font-size:11px}.contact-section p br{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+/* A quieter portrait and a clearer hierarchy for the introduction. */
+.site-header{background:#0b132b;color:#e0fbfc;border-bottom-color:#ffffff1c}
+.site-header .brand span{color:#87d9cd}
+.site-header a:hover{color:#87d9cd}
+.site-header .nav-resume,.site-header .menu-toggle{border-color:#ffffff35;color:#e0fbfc}
+.site-header a:focus-visible,.site-header button:focus-visible{outline-color:#87d9cd}
+.hero{grid-template-columns:minmax(0,1fr) 240px;column-gap:80px;padding-top:64px;row-gap:40px}
+.hero-copy{max-width:680px}
+.hero-description{max-width:570px;font-size:17px;margin-top:24px}
+.hero .portrait{width:220px;justify-self:center;padding:0;text-align:center}
+.hero .portrait-frame{width:180px;height:180px;margin-inline:auto;border-radius:50%;border:3px solid #ffffff25;box-shadow:0 0 0 10px #ffffff04}
+.hero .portrait img{object-position:center 28%}
+.hero .portrait figcaption{flex-direction:column;gap:4px;font-size:12px;margin-top:22px}
+.hero .portrait figcaption span:first-child{font-size:14px}
+.hero .actions{margin-top:28px}
+.hero .hero-links{margin-top:22px}
+.hero .hero-bottom{padding-top:20px;padding-bottom:24px}
+.hero-copy{position:relative}
+.hero-copy::before{content:"";position:absolute;inset:-20px;z-index:-1;background:radial-gradient(ellipse at left,#0b132be8,transparent 80%);pointer-events:none}
+nav a:not(.nav-resume){padding-block:10px}
+.hero-links a{padding-block:8px}
+@media(max-width:1000px){.hero{grid-template-columns:minmax(0,1fr) 190px;column-gap:32px}.hero .portrait{width:190px}.hero .portrait-frame{width:150px;height:150px}.hero h1{font-size:clamp(38px,5.3vw,54px)}}
+@media(max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:30px;gap:26px}
+  .hero .portrait{grid-row:1;width:100%;display:flex;align-items:center;gap:16px;text-align:left;justify-self:start}
+  .hero .portrait-frame{width:64px;height:64px;flex:0 0 64px;margin:0;box-shadow:none;border-width:2px}
+  .hero .portrait figcaption{margin:0;gap:3px;font-size:11px}
+  .hero .portrait figcaption span:first-child{font-size:14px}
+  .hero .eyebrow{font-size:10px;letter-spacing:1.5px;margin-bottom:18px}
+  .hero h1{font-size:clamp(36px,7.6vw,54px);letter-spacing:-1.8px}
+  .hero .hero-description{font-size:15px;line-height:1.75;margin-top:20px}
+  .hero .actions{gap:22px;margin-top:24px}
+  .hero .hero-links{margin-top:14px}
+  .hero .hero-bottom{gap:16px;font-size:10px;padding-top:16px;padding-bottom:20px}
+  .hero .hero-bottom span{max-width:200px}
 }
-@media only screen and (min-width: 400px) {
-    .tl-item {
-        margin: 20px 35px;
-    }
-}
-@media only screen and (min-width: 486px) {
-    .first {
-        opacity: 1;
-    }
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    #menu p {
-        font-size: 16px;
-    }
-    #intro_text {
-        font-size: 12px;
-    }
-    #intro_text h1 {
-        font-size: 5em;
-    }
-    #intro_text h2 {
-        font-size: 2em;
-    }
-    .profile-image-container {
-        width: 170px;
-        height: 170px;
-    }
-    .about_container {
-        margin: 0 30px;
-    }
-    h3 {
-        font-size: 1.2em;
-    }
-    p {
-        font-size: 16px;
-    }
-    .tl-item {
-        margin: 20px 55px;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .about_container {
-        margin: 0 40px;
-    }
-    .tl-item {
-        margin: 20px 85px;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    #menu p {
-        font-size: 18px;
-    }
-    #intro_text {
-        font-size: 14px;
-    }
-    #intro_text h1 {
-        font-size: 5em;
-    }
-    #intro_text h2 {
-        font-size: 2em;
-    }
-    .profile-image-container {
-        width: 200px;
-        height: 200px;
-    }
-    .about_container {
-        margin: 0 50px;
-    }
-    h3 {
-        font-size: 1.4em;
-    }
-    p {
-        font-size: 18px;
-    }
-
-    #about,
-    #timeline,
-    #work {
-        padding-bottom: 100px;
-    }
-    .tl-item {
-        margin: 20px 105px;
-    }
-    .all {
-        opacity: 1;
-    }
-    #chain-container .chain {
-        border-left: 15px dotted #333;
-        height: 140px;
-    }
-
-    #menu {
-        display: flex;
-    }
-    .topnav {
-        display: none;
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .about_container {
-        margin: 0 70px;
-    }
-    .tl-item {
-        margin: 20px 200px;
-    }
-}
-
-@media (max-width: 1920px) {
-    #profile_img_small {
-        display: none;
-    }
-}
-
-@media screen and (min-device-width: 1200px) {
-    /* profile section */
-    .about_container {
-        padding: 0 8em;
-    }
-}
+@media(max-width:380px){.hero .actions{gap:16px}.hero .button{padding-inline:14px;font-size:13px}.hero .text-link{font-size:13px}.hero .hero-bottom span{max-width:170px}}

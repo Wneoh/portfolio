@@ -1,174 +1,71 @@
-$(document).ready(function(){
-    var canvas;
-    var ctx;
-    var particles = [];
-    var num_particles = window.innerWidth/9;
-    var mouse = {
-        x: undefined,
-        y: undefined
-    }
-    var canvasW = $('#intro_section').width();
-    var canvasH = $('#intro_section').height();
-    var onCanvas = true;
+// Connected particles inspired by the portfolio's original spider-web animation.
+(() => {
+  const canvas = document.querySelector('#canvas');
+  const hero = document.querySelector('.hero-background');
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let width = 0, height = 0, particles = [], frame = 0, previous = 0;
+  let visible = true;
+  const mouse = { x: -1000, y: -1000 };
 
-    window.onload = function() {
-        init();
-    };
-
-    window.addEventListener('resize', resizeCanvas);
-
-
-    /*
-    * Get mouse position
-    */
-    function mousePosition(event) {
-        onCanvas =true;
-        mouse.x = event.pageX;
-        mouse.y = event.pageY;
-    }
-    /*
-    * Cancel mouse postion
-    */
-    function mouseOut(){
-        onCanvas =false;
-    }
-
-    /*
-    * Start the program
-    */
-    function init(){
-        canvas = document.getElementById("canvas");
-        ctx = canvas.getContext("2d");
-        //canvas.addEventListener('mousemove', mousePosition); // doesn't work
-        canvas.width = canvasW;
-        canvas.height = canvasH;
-        canvas.addEventListener('mousemove', mousePosition);
-        canvas.addEventListener('mouseout', mouseOut);
-        //canvas.addEventListener('resize', resizeCanvas);
-        start();
-    };
-
-    /*
-    * start create particles
-    */
-    function start(){
-        for (var i = 0; i < num_particles; i++){
-            particles.push(new Particle());
-        
-        }
-        loop();
-    }
-
-    /*
-    * Particle Object
-    */
-    var Particle = function () {
-        this.x = canvas.width * Math.random();
-        this.y = canvas.height * Math.random();
-    
-        if(Math.random() >= 0.5){
-            this.vx = Math.random()*1.2;
-        }else{
-            this.vx = Math.random()*-1.2;
-        }
-    
-        if(Math.random() >= 0.5){
-            this.vy = Math.random()*1.2;
-        }else{
-            this.vy = Math.random()*-1.2;
-        }
-
-        this.Color = "#d4e7ff";
-        this.radius = 2;
-
-        this.draw = function () {
-            ctx.beginPath();
-            ctx.arc(this.x,this.y,this.radius, 0, 2 * Math.PI);
-            ctx.fillStyle = this.Color;
-            ctx.fill();
-        };
-
-        /*
-        * check if it's out of boundary
-        */
-        this.update = function () {
-            this.x += this.vx;
-            this.y += this.vy;
-    
-        
-            if (this.x<0 || this.x > canvas.width){
-                this.vx = -this.vx;
-            }
-    
-            if (this.y < 0 || this.y > canvas.height){
-                this.vy = -this.vy;
-            }
-        };
-        /*
-        * get distance between
-        */
-        this.distanceBetween = function(p){
-        var dx = this.x -p.x;
-        var dy = this.y -p.y;
-
-        return Math.sqrt(dx * dx + dy * dy);
-        };
-    }
-
-    /*
-    * loop to get condition
-    */
-    function loop() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        for(var i = 0;i<num_particles;i++){
-            particles[i].draw();
-            particles[i].update();
-
-            if(particles[i].distanceBetween(mouse)<140 && onCanvas){
-                connect(particles[i],mouse,particles[i].distanceBetween(mouse),mouse);
-            }
-            for (var j = i+1; j < num_particles; j++) {
-                if(particles[i].distanceBetween(particles[j])<105){
-                    connect(particles[i],particles[j],particles[i].distanceBetween(particles[j]));
-                }
-            }
-        }
-        requestAnimationFrame(loop);
-    }
-
-    /*
-    * resize canvas
-    */
-    function resizeCanvas()
-    {   canvasW = $('#intro_section').width();
-        canvasH = $('#intro_section').height();
-        canvas.width = canvasW;
-        canvas.height = canvasH;
-        for(var i = 0;i<num_particles;i++){
-            particles[i].draw();
-        }
-    }
-
-
-    /*
-    * connect two point with line
-    */
-    function connect(fp,sp,distance,object){
-        if(object ===mouse){
-            ctx.beginPath();
-            ctx.strokeStyle = 'rgba(92, 107, 115,2.5)';
-            ctx.moveTo(fp.x, fp.y); // begin at position (fp.x,fp.y)
-            ctx.lineTo(sp.x, sp.y); // ends at position (sp.x,sp.y)
-            ctx.stroke();
-            ctx.closePath();
-        }else{
-            ctx.beginPath();
-            ctx.strokeStyle = 'rgba(92, 107, 115,'+Math.min(20/distance,1)+')';
-            ctx.moveTo(fp.x, fp.y); // begin at position (fp.x,fp.y)
-            ctx.lineTo(sp.x, sp.y); // ends at position (sp.x,sp.y)
-            ctx.stroke();
-            ctx.closePath();
-        }
-    }
-});
+  function resize() {
+    width = hero.clientWidth;
+    height = hero.clientHeight;
+    const ratio = Math.min(devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    particles = Array.from({ length: Math.min(150, Math.max(45, Math.round(width * height / 6500))) }, () => ({
+      x: Math.random() * width, y: Math.random() * height,
+      vx: (Math.random() - .5) * .75, vy: (Math.random() - .5) * .75
+    }));
+    draw(0);
+  }
+  function connect(a, b, range, opacity) {
+    const distance = Math.hypot(a.x - b.x, a.y - b.y);
+    if (distance >= range) return;
+    ctx.strokeStyle = `rgba(151, 190, 211, ${opacity * (1 - distance / range)})`;
+    ctx.beginPath();
+    ctx.moveTo(a.x, a.y);
+    ctx.lineTo(b.x, b.y);
+    ctx.stroke();
+  }
+  function draw(step) {
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach((p, index) => {
+      p.x += p.vx * step;
+      p.y += p.vy * step;
+      if (p.x < 0 || p.x > width) { p.vx *= -1; p.x = Math.max(0, Math.min(width, p.x)); }
+      if (p.y < 0 || p.y > height) { p.vy *= -1; p.y = Math.max(0, Math.min(height, p.y)); }
+      ctx.fillStyle = 'rgba(212, 231, 255, .65)';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
+      ctx.fill();
+      for (let j = index + 1; j < particles.length; j++) connect(p, particles[j], 135, .5);
+      if (!reducedMotion.matches) connect(p, mouse, 180, .9);
+    });
+  }
+  function animate(time) {
+    draw(previous ? Math.min((time - previous) / 16.67, 2) : 1);
+    previous = time;
+    frame = requestAnimationFrame(animate);
+  }
+  function sync() {
+    cancelAnimationFrame(frame);
+    previous = 0;
+    if (visible && !document.hidden && !reducedMotion.matches) frame = requestAnimationFrame(animate);
+    else draw(0);
+  }
+  hero.addEventListener('pointermove', event => {
+    const rect = hero.getBoundingClientRect();
+    mouse.x = event.clientX - rect.left;
+    mouse.y = event.clientY - rect.top;
+  });
+  hero.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1000; });
+  new ResizeObserver(resize).observe(hero);
+  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }).observe(hero);
+  reducedMotion.addEventListener('change', sync);
+  document.addEventListener('visibilitychange', sync);
+  resize();
+})();
