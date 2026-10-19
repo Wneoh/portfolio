@@ -18,3 +18,28 @@
 
 .bancom-project{padding-bottom:40px;border-bottom:1px solid var(--line);margin-bottom:40px}.gallery-open{overflow:hidden}.project-gallery{width:min(1080px,94vw);max-height:92dvh;border:1px solid var(--line);border-radius:18px;padding:24px;background:var(--paper);color:var(--ink);overflow:auto}.project-gallery::backdrop{background:#08151bd9;backdrop-filter:blur(5px)}.gallery-heading{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px}.gallery-heading .eyebrow{margin-bottom:6px}.gallery-heading h2{font-size:28px}.gallery-heading button,.gallery-controls button{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:white;color:var(--ink);cursor:pointer;flex-shrink:0}.gallery-stage figure[hidden]{display:none}.gallery-stage img{width:100%;height:min(48dvh,480px);object-fit:contain;background:#eaf1ed;border:1px solid var(--line);border-radius:8px}.gallery-stage figcaption{padding:16px 0 8px}.gallery-stage h3{font-size:20px;margin-bottom:6px}.gallery-stage p{font-size:14px;line-height:1.6}.gallery-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin:8px 0}.gallery-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.gallery-tabs button{min-height:44px;border:1px solid var(--line);padding:8px 12px;border-radius:6px;background:white;color:var(--ink);font-size:12px;cursor:pointer}.gallery-tabs button[aria-pressed=true]{background:var(--ink);color:white}@media(max-width:760px){.project-gallery{padding:16px;width:96vw}.gallery-stage img{height:32dvh}.gallery-heading h2{font-size:23px}.gallery-tabs{display:flex!important}.gallery-tabs button{flex:1 1 40%}}
 .lits-visual>a{height:100%;max-width:45%;display:flex;align-items:center;justify-content:center}.lits-visual>a img{max-width:100%;width:auto;height:100%}.project-visual a:focus-visible{outline-offset:5px}@media(max-width:400px){.gallery-heading .eyebrow{font-size:9px;letter-spacing:1px}.gallery-tabs button{min-width:0;overflow-wrap:anywhere}.contact-email{overflow-wrap:anywhere}}
+
+/* Project case studies: readable details with a screenshot-led introduction. */
+.project+.project{margin-top:56px;padding-top:56px;border-top:1px solid #c3d2cc}
+.bancom-project{padding-bottom:0;border-bottom:0;margin-bottom:0}
+.project-showcase,.project-copy{min-width:0}
+.project-showcase{align-self:start}
+.project-copy .project-lead{font-size:19px!important;line-height:1.5;color:var(--ink);font-weight:600}
+.project-highlights{padding-left:19px;margin:20px 0;color:var(--muted);font-size:15px;line-height:1.7}
+.project-highlights li+li{margin-top:12px}
+.project-highlights strong{color:var(--ink)}
+.project-links{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center}
+.project-links .text-link{margin:0}
+.project-visual.relaydesk-visual{height:auto;padding:18px;background:#dce0f1;display:block}
+.relaydesk-visual>a{display:block;overflow:hidden;border:1px solid #bcc5e0;border-radius:7px;background:white;box-shadow:0 12px 24px #142c3615}
+.preview-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 12px;background:#f5f6fc;color:#3f4f73;font-size:11px;font-weight:600}
+.preview-bar>span:first-child{color:#7c86a1;font-size:9px;letter-spacing:2px}
+.relaydesk-visual img{width:100%;height:auto;aspect-ratio:1.28;object-fit:cover;object-position:top}
+.project-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.project-preview-grid>a{min-width:0;border:1px solid #c3d2cc;border-radius:6px;overflow:hidden;background:var(--paper)}
+.project-preview-grid img{width:100%;height:auto;aspect-ratio:1.65;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.project-preview-grid>a>span{padding:10px;display:flex;justify-content:space-between;gap:8px;font-size:12px;line-height:1.5;font-weight:600}
+.project-preview-grid a:hover{border-color:var(--accent)}
+.project-image-note{font-size:12px;line-height:1.6;margin-top:12px}
+@media(max-width:1000px){.project{gap:32px;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr)}}
+@media(max-width:760px){.project{grid-template-columns:minmax(0,1fr)}.project+.project{margin-top:40px;padding-top:40px}.project-visual.relaydesk-visual{padding:12px}.project-copy .project-lead{font-size:18px!important}.project-highlights{font-size:15px}}
